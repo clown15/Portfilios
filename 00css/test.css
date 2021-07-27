@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Nanum+Gothic+Coding');
+ * {
+ 	 font-family: 'Do Hyeon', sans-serif;
+ 	
+ }
+
+body{
+	background-color: lightgray;
+/*background-image: linear-gradient(to top, #007adf 0%, #00ecbc 50%, #e1fed7 100%);*/
+
+}
+h3 {
+	font-size: 15px !important;
+}
+a{
+	color: black;
+}
+h5.card-header{
+	margin-top: 0;
+}
+.container{
+	padding-top: 120px;
+}
+.navbar {
+	border: none !important;
+}
+.navbar-default{
+	/*opacity: 0.75;*/
+	background-color: #ffff;
+	/*border:0px;*/
+}
+/*ul.nav.navbar-nav{
+	text-align: right;
+}
+.navbar-expand-sm >ul.nav.navbar-nav{
+	padding-left: 212px !important;
+}*/
+@media screen and (min-width: 320px) and (max-width: 425px){
+	.nav_size{
+		text-align: right;
+		padding-left: 212px !important;
+	}
+
+}
+/*.navbar-default .navbar-toggle .icon-bar {
+    background-color: #000000 !important;
+}*/
+.navbar-toggle{
+	margin-right: -40px !important;
+}
+.navbar-default .navbar-brand {
+    color: #17c90e !important;
+    margin-right: 60px !important;
+    margin-top: 5px !important;
+}
+.glyphicon{
+	line-height:320% !important;
+/*	width : 10px;
+	height : 10px;*/
+}
+/*#hd{
+	border-bottom: 1px solid gray;
+	margin-bottom: 3px;
+	background: white;
+	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#hd .link{
+	text-align: center;
+}*/
+
+.dday{
+	text-align: center;
+	color: gray;
+	/*text-shadow:-1px -1px 1px #000;*/
+}
+.logo{
+	width:100px;
+	height:100px;
+	/*left: -50px !important;*/
+	/*float: left;*/
+	margin-left: -70px;
+}
+.dropdown{
+	position:fixed;
+	text-align: right;
+	right: 80px;
+	top: 100px;
+	z-index: 1;
+}
+
+.card{
+	text-align: middle;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-header {
+	padding-top: 10px;
+}
+.detail{
+	display: none;
+}
+.glyphicon-plus{
+	width: 10px;
+	height: 10px
+}
+
+.busName{
+	
+	font-size: 25px;
+	font : bold;
+}
+
+.stName{
+	font-size: 18px;
+	color: lightgray;
+	font : bold;
+}
+.arrTime{
+	font-size: 15px;
+	text-align : right;
+}
+#shuttle{
+	font-size: 15px;
+	text-align : right;
+}
+#busTime{
+	font-size: 18px;
+	color: lightgray;
+	font : bold;
+}
+
+#reButton{
+	float : right;
+}
+#head {
+	width : 100%;
+}
+.navbar.nav{
+flex-direction: row;	
+}
+.tab-content > .tab-pane {
+  /*display: none;*/
+  visibility: hidden;
+  height: 0px;
+  overflow: hidden;
+}
+
+.tab-content > .active {
+  /*display: block;*/
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+}
+/*
+.dday h3{
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+*/
