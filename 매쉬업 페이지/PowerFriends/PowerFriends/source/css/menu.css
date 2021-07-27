@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+.box1 {
+  position: relative;
+  background-color: red;
+  width: 300px;
+  height: 30vh; }
+
+.power_title {
+  position: relative;
+  top: 15px;
+  left: 0;
+  width: 400px;
+  margin: 0 auto;
+  height: auto;
+  color: #fff;
+  background-color: inherit;
+  font: 400 24px/1 'Lato', sans-serif;
+  text-align: center; }
+
+.textbox {
+  position: absolute;
+  color: #fff;
+  font: 400 24px/1 'Lato', sans-serif;
+  text-align: center;
+  left: 400px; }
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  padding: 20px 0;
+  box-sizing: border-box; }
+
+/* common */
+nav ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -20px;
+  list-style: none; }
+  nav ul::after {
+    display: block;
+    clear: both;
+    content: ''; }
+  nav ul li {
+    position: relative;
+    float: left;
+    border: 2px solid #fff; }
+    nav ul li:not(:first-child) {
+      border-left: none; }
+    nav ul li:hover #home {
+      background-color: rgba(255, 255, 255, 0.3); }
+    nav ul li:hover #skon {
+      background-color: #53cb4f; }
+    nav ul li:hover #huni {
+      background-color: #ff6fbb; }
+    nav ul li:hover #enzi {
+      background-color: #5280ee; }
+    nav ul li:hover #sonien {
+      background-color: #f25773; }
+    nav ul li:hover #arti {
+      background-color: #FFB026; }
+    nav ul li:hover #miyeah {
+      background-color: #1cf2cc; }
+    nav ul li a {
+      display: inline-block;
+      padding: 0.4em 3em;
+      color: #fff;
+      font: 400 18px/1 'Lato', sans-serif;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap; }
+  nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: -2px; }
+    nav ul ul li {
+      float: none;
+      margin: 0; }
+      nav ul ul li:not(:first-child) {
+        border: 2px solid #fff;
+        border-top: none; }
+
+/* DEMO #4 */
+.navi ul ul {
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s ease-in-out;
+  transform: translateY(10px); }
+  .navi ul ul ul {
+    transform: translateX(-20px) translateY(0); }
+.navi ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0); }
+.navi ul ul li:hover > ul {
+  transform: translateX(0) translateY(0); }
+
+/*# sourceMappingURL=menu.css.map */

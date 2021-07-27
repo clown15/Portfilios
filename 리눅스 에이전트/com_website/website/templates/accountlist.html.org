@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accountlist</title>
+</head>
+<body>
+<h2><li>관리자 로그인</li>
+    계정 리스트</h2>
+    {% for account in list %}
+        {%  with pk=account.id %}
+        <a href= "{% url 'viewinfo' pk=account.id check='True' %}">ID: {{ account.idname }}&nbsp 이름: {{ account.name }}&nbsp 생성일: {{ account.cdate|date:"D d M Y" }} is supervisor?: {{ account.is_supervisor }}</a>
+        <button type="button" onclick="location.href= 'http://14.63.166.83:80/delAccount/{{ pk }}/{{ reqid }}'">계정 삭제</button><br>
+        <li>cpu:0% &nbsp memory:0% &nbsp disk:0% &nbsp Net:true</li>
+        {%  endwith %}
+    {% endfor %}
+    <br>
+</body>
+</html>

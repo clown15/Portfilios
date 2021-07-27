@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>viewdetail</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(infotable);
+
+      function infotable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'pname');
+        data.addColumn('string', 'pid');
+        data.addColumn('string', 'Cpu(%)');
+        data.addColumn('string', 'Memory(%)');
+        data.addColumn('string', 'killbutton');
+
+        var freecpu={{ res.cpu }};
+        var freememory={{ res.memory }};
+        var cpu;
+        var memory;
+        {% for info in infolist %}
+          data.addRow(['{{ info.pname }}','{{ info.pid }}','{{ info.cpu }}','{{ info.memory }}','<button type="button" onclick="location.href= \'http://14.63.166.83:80/info/killprocess{{ info.pk }}/{{ account.id }}\'">Process Kill</button>'])
+        {% endfor %}
+        var table = new  google.visualization.Table(document.getElementById('detailinfo'));
+        table.draw(data, {showRowNumber: true, width: '100%', allowHtml: 'true'});
+      }
+    </script>
+</head>
+<body>
+ID:&nbsp{{ account.idname }}&nbsp이름:&nbsp{{ account.name }}<br>
+<div id="detailinfo"></div>
+</body>
+</html>

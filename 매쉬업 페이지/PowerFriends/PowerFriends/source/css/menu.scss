@@ -1,0 +1,253 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+@import "power_color.scss";
+
+//body {
+//  margin: 0;
+//  background: linear-gradient(90deg, #93f9b9, #1d976c);
+//}
+
+.box1{
+  position: relative;
+  background-color: red;
+  width: 300px;
+  height: 30vh;
+}
+
+.power_title{
+  position: relative;
+  top: 15px;
+  left: 0;
+  width: 400px;
+  margin: 0 auto;
+  height: auto;
+  color: #fff;
+  background-color: inherit;
+  font: 400 24px/1 'Lato', sans-serif;
+  text-align: center;
+}
+
+.textbox{
+  position: absolute;
+  color: #fff;
+  font: 400 24px/1 'Lato', sans-serif;
+  text-align: center;
+  left: 400px;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;//100vh
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+.navi {
+  //background: linear-gradient(90deg, #93f9b9, #1d976c);
+}
+
+//nav::before {
+//  position: absolute;
+//  top: 5%;
+//  left: 0;
+//  width: 100%;
+//  color: #fff;
+//  font: 400 24px/1 'Lato', sans-serif;
+//  text-align: center;
+//}
+
+//.navi::before {
+//  content: 'POWER FRIENDS';
+//}
+
+/* common */
+
+nav ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -20px;
+  list-style: none;
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+  li {
+    position: relative;
+    float: left;
+    border: 2px solid #fff;
+    &:not(:first-child) {//if not first li
+      border-left: none;
+    }
+    &:hover #home{
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    &:hover #skon{
+      background-color: $skon_keycolor;
+    }
+    &:hover #huni{
+      background-color: $huni_keycolor;
+    }
+    &:hover #enzi{
+      background-color: $enzi_keycolor;
+    }
+    &:hover #sonien{
+      background-color: $sonien_keycolor;
+    }
+    &:hover #arti{
+      background-color: $arti_keycolor;
+    }
+    &:hover #miyeah{
+      background-color: $miyeah_keycolor;
+    }
+    a {
+      display: inline-block;
+      padding: 0.4em 3em;
+      color: #fff;
+      font: 400 18px/1 'Lato', sans-serif;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+  }
+  ul {
+    position: absolute;
+    top: 100%;
+    left: -2px;
+    li {
+      float: none;
+      margin: 0;
+      &:not(:first-child) {
+        border: 2px solid #fff;
+        border-top: none;
+      }
+    }
+  }
+}
+
+/* DEMO #4 */
+
+.navi ul {
+  ul {
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    transform: translateY(10px);
+    ul {
+      transform: translateX(-20px) translateY(0);
+    }
+  }
+  li:hover > ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  ul li:hover > ul {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+//.menubar{
+//  border:none;
+//  border:0px;
+//  margin:0px;
+//  padding:0px;
+//  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+//  font-size:14px;
+//  font-weight:bold;
+//}
+//
+//.menubar ul{
+//  background: rgb(109,109,109);
+//  height:50px;
+//  list-style:none;
+//  margin:0;
+//  padding:0;
+//}
+//
+//.menubar li{
+//  float:left;
+//  padding:0px;
+//}
+//
+//.menubar li a{
+//  background: rgb(109,109,109);
+//  color:#cccccc;
+//  display:block;
+//  font-weight:normal;
+//  line-height:50px;
+//  margin:0px;
+//  padding:0px 25px;
+//  text-align:center;
+//  text-decoration:none;
+//}
+//
+//.menubar li a:hover, .menubar ul li:hover a{
+//  background: rgb(71,71,71);
+//  color:#FFFFFF;
+//  text-decoration:none;
+//}
+//
+//.menubar li ul{
+//  background: rgb(109,109,109);
+//  display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+//  height:auto;
+//  padding:0px;
+//  margin:0px;
+//  border:0px;
+//  position:absolute;
+//  width:200px;
+//  z-index:200;
+//  /*top:1em;
+//  /*left:0;*/
+//}
+//
+//.menubar li:hover ul{
+//  display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+//}
+//
+//.menubar li li {
+//  background: rgb(109,109,109);
+//  display:block;
+//  float:none;
+//  margin:0px;
+//  padding:0px;
+//  width:200px;
+//}
+//
+//.menubar li:hover li a{
+//  background:none;
+//}
+//
+//.menubar li ul a{
+//  display:block;
+//  height:50px;
+//  font-size:12px;
+//  font-style:normal;
+//  margin:0px;
+//  padding:0px 10px 0px 15px;
+//  text-align:left;
+//}
+//
+//.menubar li ul a:hover, .menubar li ul li:hover a{
+//  background: rgb(71,71,71);
+//  border:0px;
+//  color:#ffffff;
+//  text-decoration:none;
+//}
+//
+//.menubar p{
+//  clear:left;
+//}
+
+//ul {list-style-type:none; margin:0; padding:0;}
+//
+//ul li {width:100px; float:left; background:#f9f9f9}
+//
+//ul li a {display: block; color: #000; padding: 8px 16px; text-decoration: none; }
+//
+//ul li a:hover {background:#ccc; color:#fff;}
+//

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./jquery.js"></script>
+	<script type="text/javascript">
+		function week() {
+			var date=new Array();
+			for(var i=0;i<7;i++) {
+				date[i]=new Date();
+				date[i].setDate(date[i].getDate()+i-4);
+			}
+			return format_date();
+		}
+		function format_date(curdate) {
+			var outdate=new Array();
+			for(var i=0;i<7;i++)
+				outdate[i]=(curdate[i].getFullYear()+'-'+(curdate[i].getMonth()+1)+'-'+curdate[i].getDate());
+			var json_date={
+				"date":[
+					{"day":outdate[0]},
+					{"day":outdate[1]},
+					{"day":outdate[2]},
+					{"day":outdate[3]},
+					{"day":outdate[4]},
+					{"day":outdate[5]},
+					{"day":outdate[6]},
+				]
+			};
+			return json_date;
+		}
+		$(document).ready(
+			function() {
+				var week_date=week();
+				$.each(week_date,function(i,date){
+					$.ajax({
+						headers:{"accesstoken":"PFjg02izVgGD2nwaXzI07D9gYTcipIKgvAjOfhzQjPPESYsMOU"},//받아온 토큰값
+						type:'GET', //get방식으로 받아오기
+						dataType:'json',//json형식으로 파일받기
+						url:'https://bablabs.com/openapi/v1/campuses/JEnfpqCUuR/stores?date='+date.day,	//날짜부분 변수로 바꿔보기
+						success:function(data){
+							var temp=data.stores[0].menus.date+"<br>";
+							$.each(data.stores[0].menus,function(index,value){
+								temp+=value.description+"<br>";
+							}) //json파일을 data로 칭함, data의2번째 stores의 배열 mensu의 descriptiond의 값들을 불러오기 위해 사용	
+							//반복문을 통해 두번째 식당의 메뉴 정보 가져오기(menus가 배열)
+							$('#dataArea').append(temp);	//메뉴들이 저장된 변수 temp를 dataArea id에 추가 하기
+						},
+						error:function(){
+							alert("error");
+						}
+					});
+				})
+			})
+
+	</script>
+</head>
+<body>
+		<div id="dataArea"></div>	
+</body>
+</html>

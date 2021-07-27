@@ -1,0 +1,16 @@
+.Mauto {
+  margin: 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  color: #ff0cba;
+  background: #efff23; }
+
+.autoauto {
+  margin: auto 0;
+  width: 30px;
+  height: 30px;
+  color: #ff842b;
+  background: #7ccbff; }
+
+/*# sourceMappingURL=marginauto.css.map */

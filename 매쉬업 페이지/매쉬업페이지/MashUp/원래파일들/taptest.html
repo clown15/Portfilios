@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lnag=ko>
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> 탭 메뉴 테스트</title>
+
+
+  <!-- script 파일들 입니다. -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=27f695eb4274a012e115634b366ae323&libraries=services">
+  </script>
+  <script src="./jquery.js"></script>
+  <script type="text/javascript" src="./busAPI.js"></script>
+  
+  <script type="text/javascript" src="hide.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> <!--드롭 다운 사용하기 위해-->
+  <script src="dist/js/bootstrap.min.js"></script> 
+
+  <!-- css 파일들 입니다 -->
+  <link rel="stylesheet" type="text/css" href="maps.css">
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="test.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="api2.css">
+  <link rel="stylesheet" type="text/css" href="Weather.css">
+  <link rel="stylesheet" type="text/css" href="floatingbar.css">
+</head>
+<body>
+
+  <!-- 탭테스트 --> 
+  <div class="card border-secondary mb-3">
+    <section class="card-header"><h3> 오늘 뭐먹을까?</h3>
+      <ul class="nav nav-tabs">
+        <li class="active nav-item">
+          <a href="#tab1" data-toggle="tab" class="nav-link">북악관</a></li>
+          <li class="nav-item">
+            <a href="#tab2" data-toggle="tab" class="nav-link">한림관</a></li>
+            <li class="nav-item">
+              <a href="#tab3" data-toggle="tab" class="nav-link">청운관</a></li>
+            </ul>
+          </section>
+          <div class="tab-content card-body">
+            <div class="tab-pane active" id="tab1">
+              <div class="dataArea0"></div> 
+              <a href="#" class="btn btn-secondary">2-3일치 학식정보</a>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <div class="dataArea1"></div> 
+              <a href="#" class="btn btn-secondary">2-3일치 학식정보</a>
+            </div>
+            <div class="tab-pane" id="tab3">
+              <div class="dataArea2"></div> 
+              <a href="#" class="btn btn-secondary">2-3일치 학식정보</a>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="./api.js"></script>
+
+
+<div class="card border-secondary mb-3">
+  <section class="card-header">
+    <ul class="nav nav-tabs">
+      <li class="active nav-item">
+        <a href="#ltab1" data-toggle="tab" class="nav-link">GREEN</a></li>
+      <li class="nav-item">
+        <a href="#ltab2" data-toggle="tab" class="nav-link">BLUE</a></li>
+      <li class="nav-item">
+        <a href="#ltab3" data-toggle="tab" class="nav-link">RED</a></li>
+      <li class="nav-item">
+        <a href="#ltab4" data-toggle="tab" class="nav-link">ORANGE</a></li>
+      <li class="nav-item">
+        <a href="#ltab5" data-toggle="tab" class="nav-link">7층</a></li>
+      <li class="nav-item">
+        <a href="#ltab6" data-toggle="tab" class="nav-link">8층</a></li>
+    </ul>
+  </section>
+  <div class="tab-content card-body">
+    <div class="tab-pane active" id="ltab1">
+      <article> 그린룸</article>
+    </div>
+    <div class="tab-pane" id="ltab2">
+      <article> 블루룸</article>
+    </div>
+    <div class="tab-pane" id="ltab3">
+      <article> 레드룸</article>
+    </div>
+    <div class="tab-pane" id="ltab4">
+      <article> 오렌지룸</article>
+    </div>
+    <div class="tab-pane" id="ltab5">
+      <article> 7층 </article>
+    </div>
+    <div class="tab-pane" id="ltab6">
+      <article> 8층</article>
+    </div> 
+  </div>
+</div>
+
+</body>
+ </html>

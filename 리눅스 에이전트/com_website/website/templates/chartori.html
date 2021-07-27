@@ -1,0 +1,220 @@
+{% load static %}
+<html>  
+  <head>
+
+    <!-- fancybox -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'info/fancybox/jquery.fancybox-1.3.4.js' %}"></script>
+    <script type="text/javascript" src="{% static 'info/fancybox/jquery.fancybox-1.3.4.pack.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'info/fancybox/jquery.fancybox-1.3.4.css' %}" media="screen" />
+    <link rel="stylesheet" href="{% static 'info/fancybox/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'info/fancybox.css' %}">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'info/chart.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <!-- JavaScript -->
+    <script type="text/javascript" href="{% static 'js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawCpu);
+      google.charts.setOnLoadCallback(drawMemory);
+      google.charts.setOnLoadCallback(drawDisk);
+      google.charts.setOnLoadCallback(drawCpuTable);
+      google.charts.setOnLoadCallback(drawMemoryTable);
+      google.charts.setOnLoadCallback(drawDiskTable);
+
+      function drawCpu() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['name', 'using'],
+          ['...', 0]
+        ]);
+        {% for info in infolist|slice:":20" %}
+          data.addRow(['{{info.pname}}', {{info.cpu}}]);
+        {% endfor %}
+
+        var options = {
+          chartArea:{
+            left:10,
+            top:20,
+            width:"100%",
+            height:"100%"
+          },
+          title: 'Cpu',
+          is3D:true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('cpu'));
+
+        chart.draw(data, options);
+      }
+      function drawMemory() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['name', 'using'],
+          ['...', 0]
+        ]);
+	{% for info in infolist|slice:":20" %}
+          data.addRow(['{{info.pname}}', {{info.memory}}]);
+        {% endfor %}
+
+
+        var options = {
+          chartArea:{
+            left:10,
+            top:20,
+            width:"100%",
+            height:"100%"
+          },
+          title: 'Memory',
+          is3D:true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('memory'));
+
+        chart.draw(data, options);
+      }
+      function drawDisk() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['name', 'using'],
+          ['...', 0]
+       ]);
+          data.addRow(['used', {{disk.used}}]);
+          data.addRow(['rest', {{disk.rest}}]);
+
+        var options = {
+          chartArea:{
+            left:10,
+            top:20,
+            width:"100%",
+            height:"100%"
+          },
+          title: 'Disk',
+          is3D:true
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('disk'));
+
+        chart.draw(data, options);
+      }
+      function drawCpuTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'pname');
+        data.addColumn('number', 'pid');
+        data.addColumn('number', 'cpu');
+        {% for info in infolist|slice:":20" %}
+           data.addRow(['{{info.pname}}', {{info.pid}}, {{info.cpu}}]);
+        {% endfor %}
+
+
+        var table = new google.visualization.Table(document.getElementById('cpu_table'));
+
+        table.draw(data, {showRowNumber: true});
+      }
+      function drawMemoryTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'pname');
+        data.addColumn('number', 'pid');
+        data.addColumn('number', 'memory');
+        {% for info in infolist|slice:":20" %}
+           data.addRow(['{{info.pname}}', {{info.pid}}, {{info.memory}}]);
+        {% endfor %}
+
+
+        var table = new google.visualization.Table(document.getElementById('memory_table'));
+
+        table.draw(data, {showRowNumber: true});
+      }
+      function drawDiskTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'full');
+        data.addColumn('number', 'used');
+        data.addColumn('number', 'rest');
+        data.addRow(['{{disk.full}}', {{disk.used}}, {{disk.rest}}]);
+
+        var table = new google.visualization.Table(document.getElementById('disk_table'));
+
+        table.draw(data, {showRowNumber: true});
+      }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("a#fCpu").fancybox({
+                'autoSize': false,
+                'titleShow': false,
+                'width':'400px',
+                'height':'300px',
+                'overlayColor':'#00ff62',
+                'overlayOpacity':'0.1',
+                'transitionIn, ':'elastic',
+                'transitionOut':'elastic',
+            });
+            $("a#fMemory").fancybox({
+                'autoSize': false,
+                'titleShow': false,
+                'width':'400px',
+                'height':'300px',
+                // 'overlayColor':'#00ff62',
+                // 'overlayOpacity':'0.1',
+                'transitionIn, ':'elastic',
+                'transitionOut':'elastic',
+            });
+            $("a#fDisk").fancybox({
+                'autoSize': true,
+                'titleShow': false,
+                'overlayColor':'#00ff62',
+                'overlayOpacity':'0.1',
+                'transitionIn, ':'elastic',
+                'transitionOut':'elastic',
+            });
+        });
+    </script>
+    <script>
+      window.onload=function() {
+        if('{{ account.is_supervisor }}'=='False') {
+          var button=document.getElementById('accountlist_button');
+          var button2=document.getElementById('waitlist_button');
+          button.style.display='none';
+          button2.style.display='none';
+        }
+      }
+    </script>
+  </head>
+<body>
+  <div>
+    ID:&nbsp{{ account.idname }}&nbsp이름:&nbsp{{ account.name }}<br>
+  </div>
+  <div>
+    <button type="button" class="btn btn-primary" onclick="location.href= 'http://14.63.166.83:80/info/information/detail/{{ account.id }}'">
+     상세 정보</button>&nbsp
+    <button type="button" class="btn btn-primary" onclick="location.href= 'http://14.63.166.83:80/modify/{{ account.id }}'">
+     정보 수정</button>&nbsp
+    <button type="button" id="accountlist_button"  class="btn btn-primary"onclick="location.href= 'http://14.63.166.83:80/accountlist/{{ account.id }}'">
+     계정리스트</button>
+    <button type="button" id="waitlist_button"  class="btn btn-primary"onclick="location.href= 'http://14.63.166.83:80/waitlist/{{ account.id }}'">
+     승인대기리스트</button>
+  </div>
+
+    <div id="main">
+      <a id="fCpu" href="#cpu_table">
+        <div id="cpu" class="chart"></div>
+      </a>
+      <a id="fMemory" href="#memory_table">
+        <div id="memory" class="chart"></div>
+      </a>
+      <a id="fDisk" href="#disk_table">
+        <div id="disk" class="chart"></div>
+      </a>
+    </div>
+
+    <div id="data_table">
+      <div id="cpu_table"></div>
+      <div id="memory_table"></div>
+      <div id="disk_table"></div>
+    </div>
+  </body>
+</html>

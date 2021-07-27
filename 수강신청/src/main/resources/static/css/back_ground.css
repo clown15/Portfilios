@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 body{
     background-image: url("../image/back_ground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+=======
+body{
+    background-image: url("../image/back_ground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+>>>>>>> master
 }

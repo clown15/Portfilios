@@ -1,0 +1,48 @@
+
+#total_menu{
+	width: 400px;
+	height: 400px;
+}
+#main{
+	display: inline-block;
+	height: 600px;
+
+	#dataArea0{
+		@extend #total_menu;
+		background-color: red;
+		#font1{
+			width: 400px;
+			height: 50px;
+			font-size: 1.875em;
+		}
+	}
+	#dataArea1{
+		@extend #total_menu;
+		background-color: green;
+		#font1{
+			width: 400px;
+			height: 50px;
+			font-size: 1.875em;
+		}
+	}
+	#dataArea2{
+		@extend #total_menu;
+		background-color: blue;
+		#font1{
+			width: 400px;
+			height: 50px;
+			font-size: 1.875em;
+		}
+	}
+}
+@media(min-width: 768px){
+	div{
+		float: left;
+	}
+}
+@media(min-width: 1023px){
+	div{
+		height: 400px;
+		float: left;
+	}
+}

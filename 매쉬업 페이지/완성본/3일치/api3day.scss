@@ -1,0 +1,80 @@
+#total_menu{
+	width: 400px;
+	height: 600px;
+}
+#menu{
+	width: 400px;
+	height: 200px;
+}
+
+#main{
+	display: inline-block;
+	height: 600px;
+
+	#dataArea0{
+		@extend #total_menu;
+		background-color: #FE2E2E;
+
+		& #dataArea00{
+			@extend #menu;
+			background-color: #FE9A2E;
+		}
+		& #dataArea01{
+			@extend #menu;
+			background-color: #F7FE2E;
+		}
+		& #dataArea02{
+			@extend #menu;
+			background-color: #64FE2E;
+		}
+
+	}
+	#dataArea1{
+		@extend #total_menu;
+		background-color: green;
+		
+		& #dataArea10{
+			@extend #menu;
+			background-color: #01DF01;
+		}
+		& #dataArea11{
+			@extend #menu;
+			background-color: #2EFEF7;
+		}
+		& #dataArea12{
+			@extend #menu;
+			background-color: #FF00FF;
+		}
+
+	}
+	#dataArea2{
+		@extend #total_menu;
+		background-color: blue;
+		
+		& #dataArea20{
+			@extend #menu;
+			background-color: #819FF7;
+		}
+		& #dataArea21{
+			@extend #menu;
+			background-color: #DF013A;
+		}
+		& #dataArea22{
+			@extend #menu;
+			background-color: #58ACFA;
+		}
+	}
+}
+
+
+@media(min-width: 768px){
+	div{
+		float: left;
+	}
+}
+@media(min-width: 1023px){
+	#main{
+		height: 600px;
+		float: left;
+	}
+}

@@ -1,0 +1,7 @@
+curl -X PUT http://14.63.166.83/api/info/kill/1/edit/?format=json -d @kill.json -H "Content-Type: application/json"
+
+커맨드
+
+경로 수정
+
+다르게 접근할 수 없는지 등등

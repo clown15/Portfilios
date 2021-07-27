@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>viewdetail</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+       <!-- Bootstrap core CSS -->
+    <link href='{% static "mainapp/vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href='{%static "mainapp/css/simple-sidebar.css"%}' rel="stylesheet">
+
+     <script src='{% static "mainapp/vendor/jquery/jquery.min.js" %}'></script
+>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/table.css' %}">
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(infotable);
+
+      function infotable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'pname');
+        data.addColumn('number', 'pid');
+        data.addColumn('number', 'Cpu(%)');
+        data.addColumn('number', 'Memory(%)');
+        data.addColumn('string', 'killbutton');
+
+        
+        {% for info in infolist %}
+          data.addRow(['{{ info.pname }}',{{ info.pid }},{{ info.cpu }},{{ info.memory }},'<button type="button" onclick="location.href= \'http://14.63.166.83:80/info/killprocess/{{ info.pk }}/{{ account.id }}\'">Process Kill</button>']);
+        {% endfor %}
+        var table = new  google.visualization.Table(document.getElementById('detailinfo'));
+        table.draw(data, {showRowNumber: true, width: '100%', allowHtml: 'true'});
+      }
+    </script>
+	<script language="JavaScript">
+		setTimeout("history.go(0);",10000);
+	</script>
+</head>
+<body>
+
+ <div id="wrapper">
+      
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menu
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href= 'http://14.63.166.83:80/modify/{{ account.id }}'"><font color=white>정보수정</font></a>
+                </li>
+                <li>
+                    <a onclick="location.href= 'http://14.63.166.83:80/info/information/{{ account.id }}True'"><font color=white>차트보기</font></a>
+                </li>
+                <li>
+                    <a href="javascript:history.back()"><font color=white>뒤로가기</font></a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        &nbspID:&nbsp{{ account.idname }}&nbsp이름:&nbsp{{ account.name }}
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu</a>
+            </div>
+        </div>
+      </div>
+<div id="detailinfo"></div>
+
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+
+
+#food_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr.food_tr_category td{
+  background-color: gray;
+  color:black;
+}
+  
+#food_td {
+  border: thin solid black;
+  padding: 3px;
+}
+
+#ftab4{
+	
+}

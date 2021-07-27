@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @font-face{
 	font-family: "NanumSquareRoundB";
 	src:url("../ttf/NanumSquareRoundB.ttf") format("truetype");
@@ -65,4 +66,73 @@ td{
 }
 #title {
 	font-size:20px;
+=======
+@font-face{
+	font-family: "NanumSquareRoundB";
+	src:url("../ttf/NanumSquareRoundB.ttf") format("truetype");
+}
+@font-face{
+	font-family: "NanumSquareRoundEB";
+	src:url("../ttf/NanumSquareRoundEB.ttf") format("truetype");
+}
+#out {
+	position:absolute;
+	display:table;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%
+}
+#middle {
+	width:80%;
+	height:80%;
+	background-color: white;
+	display: inline-block;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+}
+#content {
+	width:80%;
+	height:90%;
+	background-color: white;
+	display: inline-block;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	text-align: center;
+}
+table {
+	border-spacing: 10px;
+}
+td{
+	font-size: 15px;
+}
+.btn.circle{
+	width:300px;
+	height:300px;
+	border-radius:100%;
+	text-align:center;
+	margin:0 50px;
+	font-family:NanumSquareRoundEB;
+	font-size:25px;
+	vertical-align:middle;
+	line-height:300px;
+	background-color: white;
+}
+#info {
+	font-family:NanumSquareRoundB;
+	height:50%;
+	position: relative;
+	left: 15%;
+}
+.label {
+	text-align:left;
+	width:700px;
+}
+#title {
+	font-size:20px;
+>>>>>>> master
 }

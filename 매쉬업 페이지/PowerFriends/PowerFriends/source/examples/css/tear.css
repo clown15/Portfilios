@@ -1,0 +1,33 @@
+.tear {
+  margin: 30% auto;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 500px;
+  height: 500px;
+  border: none;
+  border-radius: 70% 5% 55% 50% / 55% 5% 70% 50%;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: black;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #1abc9c;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg); }
+
+.tear1 {
+  margin: 30% auto;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 10em;
+  height: 10em;
+  border: none;
+  border-radius: 80%/55%;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: black;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #1abc9c; }
+
+/*# sourceMappingURL=tear.css.map */

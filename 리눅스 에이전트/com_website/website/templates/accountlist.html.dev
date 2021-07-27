@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>accountlist</title>
+    <!-- CSS -->
+
+    <!-- Java Script -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(accountTable);
+
+        function accountTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'ID');
+            data.addColumn('string', '이름');
+            data.addColumn('string', '생성일');
+            data.addColumn('string', 'supervisor');
+            data.addColumn('string', 'CPU');
+            data.addColumn('string', 'Memory');
+            data.addColumn('string', 'Disk');
+            data.addColumn('string',);
+
+            {% for account in list %}
+                {%  with pk=account.id %}
+                data.addRow(['<a href= \"{% url 'viewinfo' pk=account.id check='True' %}\">{{ account.idname }}','{{ account.name }}','{{ account.cdate|date:"D d M Y" }}','{{ account.is_supervisor }}','0%','0%','0%','<button type=\"button\" onclick=\"location.href= \'http://14.63.166.83:80/delAccount/{{ pk }}/{{ reqid }}\'\">계정 삭제</button>'])
+                {%  endwith %}
+            {% endfor %}
+
+            var table=new google.visualization.Table(document.getelementById('account_list'));
+            table.draw(data,{showRowNumber: true});
+        }
+    </script>
+</head>
+<body>
+<h2><li>관리자 로그인</li>
+    계정 리스트</h2>
+    <div id="account_list"></div>
+</body>
+</html>
