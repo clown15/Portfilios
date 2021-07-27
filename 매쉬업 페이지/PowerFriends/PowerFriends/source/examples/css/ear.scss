@@ -1,0 +1,377 @@
+*{
+
+}
+
+.tril {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 270px;
+  left: 86px;
+  .tril1 {
+    top: 1px;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(53deg);
+  }
+  .tril2 {
+    top: 5px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(56deg);
+  }
+  .tril3 {
+    top: 9px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(59deg);
+  }
+  .tril4 {
+    top: 13px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(62deg);
+  }
+  .tril5 {
+    top: 17px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(65deg);
+  }
+  .tril6 {
+    top: 21px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(68deg);
+  }
+  .tril7 {
+    top: 25px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(71deg);
+  }
+  .tril8 {
+    top: 29px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(74deg);
+  }
+  .tril9 {
+    top: 34px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(77deg);
+  }
+  .tril10 {
+    top: 38px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(80deg);
+  }
+  .tril11 {
+    top: 42px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(83deg);
+  }
+  .tril12 {
+    top: 46px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(86deg);
+  }
+}
+.trir {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 270px;
+  left: 155px;
+  .trir1 {
+    top: 1px;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-53deg);
+  }
+  .trir2 {
+    top: 5px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-56deg);
+  }
+  .trir3 {
+    top: 9px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-59deg);
+  }
+  .trir4 {
+    top: 13px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-62deg);
+  }
+  .trir5 {
+    top: 17px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-65deg);
+  }
+  .trir6 {
+    top: 21px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-68deg);
+  }
+  .trir7 {
+    top: 25px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-71deg);
+  }
+  .trir8 {
+    top: 29px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-74deg);
+  }
+  .trir9 {
+    top: 34px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-77deg);
+  }
+  .trir10 {
+    top: 38px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-80deg);
+  }
+  .trir11 {
+    top: 42px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-83deg);
+  }
+  .trir12 {
+    top: 46px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #000000;
+    transform: rotateZ(-86deg);
+  }
+}
+
+.box{
+  margin: 0 auto;
+  width: 100px;
+  height: 300px;
+  border : 3px solid #1abc9c;
+  border-radius: 100px 100px 0 0 ;
+}
+
+.tril {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 270px;
+  left: 86px;
+  .tril1{
+    top:1px;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #bc2035;
+    transform: rotateZ(53deg);
+  }
+  .tril2{
+    top:5px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #2d91bc;
+    transform: rotateZ(56deg);
+  }
+  .tril3{
+    top:9px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #bb00ff;
+    transform: rotateZ(59deg);
+  }
+  .tril4{
+    top:13px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #40b57f;
+    transform: rotateZ(62deg);
+  }
+  .tril5{
+    top:17px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #e8ee22;
+    transform: rotateZ(65deg);
+  }
+  .tril6{
+    top:21px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ee3a2f;
+    transform: rotateZ(68deg);
+  }
+  .tril7{
+    top:25px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #2d91bc;
+    transform: rotateZ(71deg);
+  }
+  .tril8{
+    top:29px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ee0ecc;
+    transform: rotateZ(74deg);
+  }
+  .tril9{
+    top:34px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ff842b;
+    transform: rotateZ(77deg);
+  }
+  .tril10{
+    top:38px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #7ccbff;
+    transform: rotateZ(80deg);
+  }
+  .tril11{
+    top:42px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #3640ff;
+    transform: rotateZ(83deg);
+  }
+  .tril12{
+    top:46px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #030506;
+    transform: rotateZ(86deg);
+  }
+}
+.trir {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  top: 270px;
+  left: 155px;
+  .trir1{
+    top:1px;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #bc2035;
+    transform: rotateZ(-53deg);
+  }
+  .trir2{
+    top:5px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #2d91bc;
+    transform: rotateZ(-56deg);
+  }
+  .trir3{
+    top:9px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #bb00ff;
+    transform: rotateZ(-59deg);
+  }
+  .trir4{
+    top:13px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #40b57f;
+    transform: rotateZ(-62deg);
+  }
+  .trir5{
+    top:17px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #e8ee22;
+    transform: rotateZ(-65deg);
+  }
+  .trir6{
+    top:21px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ee3a2f;
+    transform: rotateZ(-68deg);
+  }
+  .trir7{
+    top:25px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #2d91bc;
+    transform: rotateZ(-71deg);
+  }
+  .trir8{
+    top:29px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ee0ecc;
+    transform: rotateZ(-74deg);
+  }
+  .trir9{
+    top:34px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #ff842b;
+    transform: rotateZ(-77deg);
+  }
+  .trir10{
+    top:38px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #7ccbff;
+    transform: rotateZ(-80deg);
+  }
+  .trir11{
+    top:42px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #3640ff;
+    transform: rotateZ(-83deg);
+  }
+  .trir12{
+    top:46px;
+    position: absolute;
+    border: 80px solid transparent;
+    border-bottom: 80px solid #030506;
+    transform: rotateZ(-86deg);
+  }
+}

@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>accountlist</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accountlist.css' %}">
+    <!-- Java Script -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link href='{%static "mainapp/css/simple-sidebar.css"%}' rel="stylesheet">
+     <!-- Bootstrap core JavaScript -->
+    <script src='{% static "mainapp/vendor/jquery/jquery.min.js" %}'></script>
+
+     <!-- Bootstrap core CSS -->
+    <link href='{% static "mainapp/vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(accountTable);
+
+        function accountTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'ID');
+            data.addColumn('string', '이름');
+            data.addColumn('string', '생성일');
+            data.addColumn('string', 'supervisor');
+            data.addColumn('string', '');
+
+            {% for account in list %}
+                {%  with pk=account.id %}
+                data.addRow(['<a href= "{% url 'viewinfo' pk=account.id check='True' %}">{{ account.idname }}</a>','{{ account.name }}','{{ account.cdate|date:"Y.M.d" }}','{{ account.is_supervisor }}','<button type="button" onclick="location.href= \'http://14.63.166.83:80/delAccount/{{ pk }}/{{ reqid }}\'">계정 삭제</button>'])
+                {%  endwith %}
+            {% endfor %}
+
+            var table = new  google.visualization.Table(document.getElementById('account_list'));
+            table.draw(data, {showRowNumber: true, width: '100%', allowHtml: 'true'});
+        }
+    </script>
+</head>
+<body>
+    
+
+    <div id="wrapper">
+            
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menu
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href= 'http://14.63.166.83:80/modify/{{ reqid }}'"><font color=white>정보수정</font></a>
+                </li>
+                <li>
+                    <a onclick="location.href= 'http://14.63.166.83:80/info/information/{{ reqid }}True'"><font color=white>차트보기</font></a>
+                </li>
+                <li>
+                    <a onclick="location.href= 'http://14.63.166.83:80/waitlist/{{ reqid }}'"><font color=white>승인대기리스트</font></a>
+                </li>
+                <li>
+                    <a href="javascript:history.back()"><font color=white>뒤로가기</font></a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <div id="Top">
+        &nbsp<h2><li>관리자 로그인</li>&nbsp계정 리스트</h2>
+    </div>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+        <div id="main">
+            <div id="account_list"></div>
+        </div>
+
+    </div>
+    <!-- /#wrapper -->
+
+   
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+</body>
+</html>

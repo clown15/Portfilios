@@ -1,0 +1,5 @@
+$(window).scroll(function () {
+			var height = $(document).scrollTop();
+			log(height);
+			
+	});

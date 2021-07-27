@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viewdetail</title>
+</head>
+<body>
+ID:&nbsp{{ account.idname }}&nbsp이름:&nbsp{{ account.name }}<br>
+<style>
+body { background: #fff; }
+.bluetop {
+  border-collapse: collapse;
+  border-top: 3px solid #168;
+  width: 1000px;
+  height: 500px;
+}
+.bluetop thead {
+  color: #168;
+  background: #c1e3fa;
+}
+.bluetop thead, .bluetop td {
+  padding: 10px;
+  border: 1px solid #8f8f8f;
+}
+.bluetop th:first-child, .bluetop td:first-child {
+  border-left: 0;
+}
+.bluetop th:last-child, .bluetop td:last-child {
+  border-right: 0;
+}
+</style>
+<div class="container">detail-info
+    <table class="bluetop">
+        <thead>
+        <tr>
+            <td><b>pname</b></td>
+            <td><b>pid</b></td>
+            <td><b>cpu(%)</b></td>
+            <td><b>memory(%)</b></td>
+            <td><b>disk(%)</b></td>
+            <td><b>kill Button</b></td>
+        </tr>
+        </thead>
+        <tbody>
+        <script>
+        var freecpu = {{ res.cpu }};
+        var freememory = {{ res.memory }};
+        var freedisk = {{ res.disk }};
+        {% for info in infolist %}
+            var cpu = {{ info.cpu }} / {{ res.cpu }} *100;
+            var memory = {{ info.memory }} / {{ res.memory }} *100;
+            var disk = {{ info.disk }} / {{ res.disk }} *100;
+            freecpu = freecpu - {{ info.cpu }};
+            freememory = freememory - {{ info.memory }};
+            freedisk = freedisk - {{ info.disk }};
+            document.write("<tr><td> {{ info.pname }} </td><td>" + {{ info.pid }} + "</td><td>" + {{ info.cpu }} +" ( "+ cpu +" )</td><td>" +
+                {{ info.memory }} +" ( "+memory +" )</td><td>" + {{ info.disk }} +" ( "+disk +" )</td><td><button type=\"button\" onclick=\"location.href= \'http://14.63.166.83:80/info/killprocess/{{ info.pk }}/{{ account.id }}\'\">프로세스 kill</button></td></tr>");
+        {% endfor %}
+            freecpu = freecpu / {{ res.cpu }} *100;
+            freememory = freememory / {{ res.memory }} *100;
+            freedisk = freedisk / {{ res.disk }} *100;
+            document.write("<tr><td><b>free</b></td><td><b>none</b></td><td><b>( " + freecpu +" )</b></td><td><b>( " +
+            freememory +" )</b></td><td><b>( " +freedisk +" )</b></td><td>none</td></tr>");
+        </script>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

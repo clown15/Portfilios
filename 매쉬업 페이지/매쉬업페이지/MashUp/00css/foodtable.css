@@ -1,0 +1,21 @@
+
+
+#food_table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr.food_tr_category td{
+  background-color: rgb(100,100,100);
+  color:white;
+}
+  
+#food_td {
+  border-bottom: thin solid;
+  border-bottom-color: rgb(130,130,130);
+  padding: 3px;
+}
+
+#ftab4{
+	
+}

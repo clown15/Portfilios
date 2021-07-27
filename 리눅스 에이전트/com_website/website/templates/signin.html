@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}">
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"/>
+        <script type="text/javascript" href="{% static 'js/bootstrap.js' %}"></script>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+</head>
+
+<body>
+<div class="container">
+  
+  <div class="row" id="pwd-container">
+    <div class="col-md-4"></div>
+    
+    <div class="col-md-4">
+      <section class="login-form">
+        <form method="post" action="" role="login">
+        <h1> SIGN   IN</h1>
+        </br>
+           {{ form.as_p }}
+          </br>
+           {% csrf_token %}
+          
+          
+          <div class="pwstrength_viewport_progress"></div>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+          <div>
+            <a onclick="location.href='create'">Create account</a>
+          </div>
+          
+        </form>
+      </section>  
+      </div>
+      
+      <div class="col-md-4"></div>
+      
+
+  </div>
+  
+</div>
+</body>

@@ -1,0 +1,1825 @@
+@import "power_color.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+body {
+  background: $arti_background;
+}
+@keyframes neon { //face-neon
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  20% {
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  40% {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  60% {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  80% {
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  90% {
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+@keyframes poweron { //powerbtn, mouth_color_on
+  from {
+  }
+  20% {
+    background-color: $arti_keycolor_hover;
+  }
+  40% {
+    background-color: $arti_keycolor;
+  }
+  60% {
+    background-color: $arti_keycolor;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+  }
+  90% {
+    background-color: $arti_keycolor_hover;
+  }
+  to {
+    background-color: $arti_keycolor;
+  }
+}
+
+@keyframes poweron_border { //mouth_half_color_on
+  from {
+  }
+  20% {
+    border-color: $arti_keycolor_hover;
+  }
+  40% {
+    border-color: $arti_keycolor;
+  }
+  80% {
+    border-color: $arti_keycolor_hover;
+  }
+  90% {
+    border-color: $arti_keycolor_hover;
+  }
+  to {
+    border-color: $arti_keycolor;
+  }
+}
+
+@keyframes hair_ani1 { //hair 1~5 animation
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  5% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  30% {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  60% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+@keyframes hair_ani2 {
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  10% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  35% {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+@keyframes hair_ani3 {
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  10% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  40% {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  60% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+@keyframes hair_ani4 {
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  20% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  45% {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  60% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+@keyframes hair_ani5 {
+  from {
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  25% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  50% {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+  60% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  80% {
+    background-color: $arti_keycolor_hover;
+    box-shadow: 0 0 50px 5px $arti_neon;
+  }
+  to {
+    background-color: $arti_keycolor;
+    box-shadow: 0 0 0 0 $arti_neon;
+  }
+}
+
+.power_arti {
+  position: relative;
+  float: left;
+  margin: 0 3% 0 5%;
+  top: 190px;
+  width: 400px;
+  height: 400px;
+  -webkit-transform: scale(0.85, 0.85);
+  transform: scale(0.85, 0.85);
+
+  &:hover {
+    .hair {
+      .hair1 {
+        animation-name: hair_ani1;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: hair_ani1;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+      .hair2 {
+        animation-name: hair_ani2;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: hair_ani2;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+      .hair3 {
+        animation-name: hair_ani3;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: hair_ani3;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+      .hair4 {
+        animation-name: hair_ani4;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: hair_ani4;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+      .hair5 {
+        animation-name: hair_ani5;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: hair_ani5;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+    }
+    .symbol_arti {
+      .line {
+        animation-name: poweron;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+      .circle {
+        animation-name: poweron_border;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron_border;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+
+    }
+    .face {
+      animation-name: neon;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      -webkit-animation-name: neon;
+      -webkit-animation-duration: 6s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+    }
+    .neck {
+      animation-name: poweron;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      -webkit-animation-name: poweron;
+      -webkit-animation-duration: 6s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+    }
+    .neon_neck {
+      animation-name: neon;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      -webkit-animation-name: neon;
+      -webkit-animation-duration: 6s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+    }
+    .mouth {
+      .mouth_upper {
+        animation-name: poweron;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+        left: -15px;
+        width: 135px;
+      }
+      .mouth_half {
+        left: -20px;
+        width: 140px;
+        animation-name: poweron_border;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron_border;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+        .mouth_inner {
+          &.teeth1 {
+            left: 35px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+          &.teeth2 {
+            left: 67.5px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+          &.teeth3 {
+            left: 100px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+        }
+      }
+
+    }
+    .power_btn {
+      .btn_center,
+      .btn_ring,
+      .btn_ring_hide.left,
+      .btn_ring_hide.right {
+        animation-name: poweron;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+    }
+  }
+  .hair {
+    position: absolute;
+    top: -120px;
+    left: 186px;
+    width: 30px;
+    height: 200px;
+    .hair1 {
+      position: absolute;
+      top: 181px;
+      left: -255px;
+      width: 28px;
+      height: 90px;
+      border-radius: 50px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(-80deg);
+      transform: rotate(-80deg);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .hair2 {
+      position: absolute;
+      top: 51px;
+      left: -160px;
+      width: 28px;
+      height: 90px;
+      border-radius: 50px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(-40deg);
+      transform: rotate(-40deg);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .hair3 {
+      position: absolute;
+      width: 28px;
+      height: 90px;
+      border-radius: 50px;
+      background-color: $arti_keycolor;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .hair4 {
+      position: absolute;
+      top: 51px;
+      left: 160px;
+      width: 28px;
+      height: 90px;
+      border-radius: 50px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .hair5 {
+      position: absolute;
+      top: 181px;
+      left: 255px;
+      width: 28px;
+      height: 90px;
+      border-radius: 50px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(80deg);
+      transform: rotate(80deg);
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+  }
+  .neon_neck { // if you want to neon on (when you don't want to do not hover), delete '//''
+    position: absolute;
+    top: 340px;
+    left: 90px;
+    width: 221px;
+    height: 150px;
+    background-color: $basics;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: $basics;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .curve {
+    &.left {
+      position: absolute;
+      top: 270px;
+      left: 86px;
+      width: 0;
+      height: 0;
+      .left1 {
+        position: absolute;
+        top: 0;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(53deg);
+        transform: rotateZ(53deg);
+      }
+      .left2 {
+        position: absolute;
+        top: 5px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(56deg);
+        transform: rotateZ(56deg);
+      }
+      .left3 {
+        position: absolute;
+        top: 10px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(59deg);
+        transform: rotateZ(59deg);
+      }
+      .left4 {
+        position: absolute;
+        top: 15px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(62deg);
+        transform: rotateZ(62deg);
+      }
+      .left5 {
+        position: absolute;
+        top: 20px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(65deg);
+        transform: rotateZ(65deg);
+      }
+      .left6 {
+        position: absolute;
+        top: 25px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(68deg);
+        transform: rotateZ(68deg);
+      }
+      .left7 {
+        position: absolute;
+        top: 30px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(71deg);
+        transform: rotateZ(71deg);
+      }
+      .left8 {
+        position: absolute;
+        top: 35px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(74deg);
+        transform: rotateZ(74deg);
+      }
+      .left9 {
+        position: absolute;
+        top: 40px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(77deg);
+        transform: rotateZ(77deg);
+      }
+      .left10 {
+        position: absolute;
+        top: 45px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(80deg);
+        transform: rotateZ(80deg);
+      }
+      .left11 {
+        position: absolute;
+        top: 50px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(83deg);
+        transform: rotateZ(83deg);
+      }
+      .left12 {
+        position: absolute;
+        top: 55px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(86deg);
+        transform: rotateZ(86deg);
+      }
+    }
+    &.right {
+      position: absolute;
+      top: 270px;
+      left: 155px;
+      width: 0;
+      height: 0;
+      .right1 {
+        top: 0;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-53deg);
+        transform: rotateZ(-53deg);
+      }
+      .right2 {
+        position: absolute;
+        top: 5px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-56deg);
+        transform: rotateZ(-56deg);
+      }
+      .right3 {
+        position: absolute;
+        top: 10px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-59deg);
+        transform: rotateZ(-59deg);
+      }
+      .right4 {
+        position: absolute;
+        top: 15px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-62deg);
+        transform: rotateZ(-62deg);
+      }
+      .right5 {
+        position: absolute;
+        top: 20px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-65deg);
+        transform: rotateZ(-65deg);
+      }
+      .right6 {
+        position: absolute;
+        top: 25px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-68deg);
+        transform: rotateZ(-68deg);
+      }
+      .right7 {
+        position: absolute;
+        top: 30px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-71deg);
+        transform: rotateZ(-71deg);
+      }
+      .right8 {
+        position: absolute;
+        top: 35px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-74deg);
+        transform: rotateZ(-74deg);
+      }
+      .right9 {
+        position: absolute;
+        top: 40px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-77deg);
+        transform: rotateZ(-77deg);
+      }
+      .right10 {
+        position: absolute;
+        top: 45px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-80deg);
+        transform: rotateZ(-80deg);
+      }
+      .right11 {
+        position: absolute;
+        top: 50px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-83deg);
+        transform: rotateZ(-83deg);
+      }
+      .right12 {
+        position: absolute;
+        top: 55px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-86deg);
+        transform: rotateZ(-86deg);
+      }
+    }
+    &.hide {
+      position: absolute;
+      top: 330px;
+      left: 106px;
+      width: 190px;
+      height: 150px;
+      background-color: $basics;
+    }
+  }
+  .mouth {
+    position: absolute;
+    top: 280px;
+    left: 154px;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+    .mouth_upper {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 100px;
+      height: 5px;
+      background-color: $arti_keycolor;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .mouth_hide {
+      position: absolute;
+      left: -25px;
+      top: -15px;
+      width: 160px;
+      height: 50px;
+      background-color: $basics;
+    }
+    .mouth_half {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      height: 70px;
+      border: 5px solid $arti_keycolor;
+      border-radius: 0 0 100% 100% / 0 0 100% 100%;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      .mouth_inner {
+        position: absolute;
+        width: 5px;
+        &.teeth1 {
+          top: 29px;
+          left: 20px;
+          height: 30px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+        &.teeth2 {
+          top: 29px;
+          left: 47.5px;
+          height: 35px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+        &.teeth3 {
+          top: 29px;
+          left: 75px;
+          height: 25px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+      }
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    z-index: 2;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $arti_keycolor;
+      z-index: 3;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 4;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $arti_keycolor;
+      z-index: 4;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $arti_keycolor;
+      z-index: 3;
+      &.left {
+        left: 140px;
+        -webkit-transform: rotate(65deg);
+        transform: rotate(65deg);
+      }
+      &.right {
+        left: 229px;
+        -webkit-transform: rotate(-65deg);
+        transform: rotate(-65deg);
+      }
+    }
+  }
+  .neck {
+    position: absolute;
+    top: 460px;
+    left: 81px;
+    width: 240px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: $arti_keycolor;
+    z-index: 3;
+  }
+  .symbol_arti {
+    position: relative;
+    top: 330px;
+    left: -50px;
+    width: 500px;
+    height: 500px;
+    z-index: 0;
+    -webkit-transform: scale(0.4, 0.4);
+    transform: scale(0.4, 0.4);
+    .line {
+      position: absolute;
+      width: 15px;
+      height: 290px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      z-index: 2;
+      -webkit-transition: all 3s;
+      transition: all 3s;
+      &.left {
+        left: 152px;
+        -webkit-transform: rotate(20deg);
+        transform: rotate(20deg);
+      }
+      &.right {
+        right: 152px;
+        -webkit-transform: rotate(-20deg);
+        transform: rotate(-20deg);
+      }
+    }
+    .circle {
+      position: absolute;
+      top: 228px;
+      border-radius: 100%;
+      border: 15px solid $arti_keycolor;
+      z-index: 1;
+      -webkit-transition: all 2.5s;
+      transition: all 2.5s;
+      &.left {
+        width: 140px;
+        height: 103px;
+        left: 105px;
+        z-index: 1;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 44px;
+          left: -60px;
+          width: 150px;
+          height: 100px;
+          background-color: $arti_background;
+          -webkit-transform: rotate(23deg);
+          transform: rotate(23deg);
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 73px;
+          left: 60px;
+          width: 150px;
+          height: 100px;
+          background-color: $arti_background;
+          z-index: 3;
+        }
+      }
+      &.center {
+        width: 110px;
+        height: 110px;
+        left: 194px;
+        z-index: 0;
+      }
+      &.right {
+        width: 140px;
+        height: 103px;
+        right: 105px;
+        z-index: 0;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 44px;
+          right: -60px;
+          width: 150px;
+          height: 100px;
+          background-color: $arti_background;
+          -webkit-transform: rotate(-23deg);
+          transform: rotate(-23deg);
+        }
+      }
+    }
+  }
+}
+
+.power_arti_body {
+  position: relative;
+  float: left;
+  margin: 0 2% 0 2%;
+  top: 90px;
+  width: 400px;
+  height: 400px;
+  -webkit-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+
+  &:hover {
+    .arti_body {
+      .trunk {
+        .symbol_arti {
+          .line {
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+          .circle {
+            animation-name: poweron_border;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron_border;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+
+        }
+      }
+    }
+    .face {
+      animation-name: neon;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      -webkit-animation-name: neon;
+      -webkit-animation-duration: 6s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+    }
+    .neon_neck {
+      animation-name: neon;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      -webkit-animation-name: neon;
+      -webkit-animation-duration: 6s;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-play-state: running;
+    }
+    .mouth {
+      .mouth_upper {
+        animation-name: poweron;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+        left: -15px;
+        width: 135px;
+      }
+      .mouth_half {
+        left: -20px;
+        width: 140px;
+        animation-name: poweron_border;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron_border;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+        .mouth_inner {
+          &.teeth1 {
+            left: 35px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+          &.teeth2 {
+            left: 67.5px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+          &.teeth3 {
+            left: 100px;
+            animation-name: poweron;
+            animation-duration: 6s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
+            -webkit-animation-name: poweron;
+            -webkit-animation-duration: 6s;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-play-state: running;
+          }
+        }
+      }
+
+    }
+    .power_btn {
+      .btn_center,
+      .btn_ring,
+      .btn_ring_hide.left,
+      .btn_ring_hide.right {
+        animation-name: poweron;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+        -webkit-animation-name: poweron;
+        -webkit-animation-duration: 6s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-play-state: running;
+      }
+    }
+  }
+  .neon_neck { // if you want to neon on (when you don't want to do not hover), delete '//''
+    position: absolute;
+    top: 340px;
+    left: 90px;
+    width: 221px;
+    height: 150px;
+    background-color: $basics;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .face {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: $basics;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  .curve {
+    &.left {
+
+      position: absolute;
+      top: 270px;
+      left: 86px;
+      width: 0;
+      height: 0;
+      .left1 {
+        position: absolute;
+        top: 0;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(53deg);
+        transform: rotateZ(53deg);
+      }
+      .left2 {
+        position: absolute;
+        top: 5px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(56deg);
+        transform: rotateZ(56deg);
+      }
+      .left3 {
+        position: absolute;
+        top: 10px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(59deg);
+        transform: rotateZ(59deg);
+      }
+      .left4 {
+        position: absolute;
+        top: 15px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(62deg);
+        transform: rotateZ(62deg);
+      }
+      .left5 {
+        position: absolute;
+        top: 20px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(65deg);
+        transform: rotateZ(65deg);
+      }
+      .left6 {
+        position: absolute;
+        top: 25px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(68deg);
+        transform: rotateZ(68deg);
+      }
+      .left7 {
+        position: absolute;
+        top: 30px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(71deg);
+        transform: rotateZ(71deg);
+      }
+      .left8 {
+        position: absolute;
+        top: 35px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(74deg);
+        transform: rotateZ(74deg);
+      }
+      .left9 {
+        position: absolute;
+        top: 40px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(77deg);
+        transform: rotateZ(77deg);
+      }
+      .left10 {
+        position: absolute;
+        top: 45px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(80deg);
+        transform: rotateZ(80deg);
+      }
+      .left11 {
+        position: absolute;
+        top: 50px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(83deg);
+        transform: rotateZ(83deg);
+      }
+      .left12 {
+        position: absolute;
+        top: 55px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(86deg);
+        transform: rotateZ(86deg);
+      }
+    }
+    &.right {
+      position: absolute;
+      top: 270px;
+      left: 155px;
+      width: 0;
+      height: 0;
+      .right1 {
+        top: 0;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-53deg);
+        transform: rotateZ(-53deg);
+      }
+      .right2 {
+        position: absolute;
+        top: 5px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-56deg);
+        transform: rotateZ(-56deg);
+      }
+      .right3 {
+        position: absolute;
+        top: 10px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-59deg);
+        transform: rotateZ(-59deg);
+      }
+      .right4 {
+        position: absolute;
+        top: 15px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-62deg);
+        transform: rotateZ(-62deg);
+      }
+      .right5 {
+        position: absolute;
+        top: 20px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-65deg);
+        transform: rotateZ(-65deg);
+      }
+      .right6 {
+        position: absolute;
+        top: 25px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-68deg);
+        transform: rotateZ(-68deg);
+      }
+      .right7 {
+        position: absolute;
+        top: 30px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-71deg);
+        transform: rotateZ(-71deg);
+      }
+      .right8 {
+        position: absolute;
+        top: 35px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-74deg);
+        transform: rotateZ(-74deg);
+      }
+      .right9 {
+        position: absolute;
+        top: 40px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-77deg);
+        transform: rotateZ(-77deg);
+      }
+      .right10 {
+        position: absolute;
+        top: 45px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-80deg);
+        transform: rotateZ(-80deg);
+      }
+      .right11 {
+        position: absolute;
+        top: 50px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-83deg);
+        transform: rotateZ(-83deg);
+      }
+      .right12 {
+        position: absolute;
+        top: 55px;
+        border: 80px solid transparent;
+        border-bottom: 80px solid $basics;
+        -webkit-transform: rotateZ(-86deg);
+        transform: rotateZ(-86deg);
+      }
+    }
+    &.hide {
+      position: absolute;
+      top: 330px;
+      left: 106px;
+      width: 190px;
+      height: 150px;
+      background-color: $basics;
+    }
+  }
+  .mouth {
+    position: absolute;
+    top: 280px;
+    left: 154px;
+    width: 70px;
+    height: 70px;
+    z-index: 2;
+    .mouth_upper {
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 100px;
+      height: 5px;
+      background-color: $arti_keycolor;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .mouth_hide {
+      position: absolute;
+      left: -25px;
+      top: -15px;
+      width: 160px;
+      height: 50px;
+      background-color: $basics;
+    }
+    .mouth_half {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      height: 70px;
+      border: 5px solid $arti_keycolor;
+      border-radius: 0 0 100% 100% / 0 0 100% 100%;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      .mouth_inner {
+        position: absolute;
+        width: 5px;
+        &.teeth1 {
+          top: 29px;
+          left: 20px;
+          height: 30px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+        &.teeth2 {
+          top: 29px;
+          left: 47.5px;
+          height: 35px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+        &.teeth3 {
+          top: 29px;
+          left: 75px;
+          height: 25px;
+          background-color: $arti_keycolor;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+      }
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    z-index: 2;
+    -webkit-transition-duration: 0.5s;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $arti_keycolor;
+      z-index: 3;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 4;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $arti_keycolor;
+      z-index: 4;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $arti_keycolor;
+      z-index: 3;
+      &.left {
+        left: 140px;
+        -webkit-transform: rotate(65deg);
+        transform: rotate(65deg);
+      }
+      &.right {
+        left: 229px;
+        -webkit-transform: rotate(-65deg);
+        transform: rotate(-65deg);
+      }
+    }
+  }
+  .neck {
+    position: absolute;
+    top: 440px;
+    left: 81px;
+    width: 240px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: $arti_keycolor;
+    z-index: 3;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+  }
+  .arti_body {
+    position: absolute;
+    top: 420px;
+    width: 400px;
+    height: 600px;
+    z-index: 1;
+    -webkit-transform: scale(1.25, 1.25);
+    transform: scale(1.25, 1.25);
+    .trunk {
+      position: absolute;
+      top: 2px;
+      left: 112px;
+      width: 176px;
+      height: 180px;
+      border-radius: 0;
+      background-color: $basics;
+      z-index: 2;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 130px;
+        width: 176px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: $basics;
+      }
+      .symbol_arti {
+        position: relative;
+        top: -100px;
+        left: -160px;
+        width: 500px;
+        height: 500px;
+        z-index: 4;
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        .line {
+          position: absolute;
+          width: 15px;
+          height: 290px;
+          border-radius: 10px;
+          background-color: $arti_keycolor;
+          z-index: 2;
+          -webkit-transition: all 2s;
+          transition: all 2s;
+          &.left {
+            left: 152px;
+            -webkit-transform: rotate(20deg);
+            transform: rotate(20deg);
+
+          }
+          &.right {
+            right: 152px;
+            -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+          }
+        }
+        .circle {
+          position: absolute;
+          top: 228px;
+          border-radius: 100%;
+          border: 15px solid $arti_keycolor;
+          z-index: 1;
+          -webkit-transition: all 2s;
+          transition: all 2s;
+          &.left {
+            width: 140px;
+            height: 103px;
+            left: 105px;
+            z-index: 1;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 44px;
+              left: -60px;
+              width: 150px;
+              height: 100px;
+              background-color: $basics;
+              -webkit-transform: rotate(23deg);
+              transform: rotate(23deg);
+            }
+            &:after {
+              content: "";
+              position: absolute;
+              top: 73px;
+              left: 60px;
+              width: 150px;
+              height: 100px;
+              background-color: $basics;
+              z-index: 3;
+            }
+
+          }
+          &.center {
+            width: 110px;
+            height: 110px;
+            left: 194px;
+            z-index: 0;
+          }
+          &.right {
+            width: 140px;
+            height: 103px;
+            right: 105px;
+            z-index: 0;
+            &:before {
+              content: "";
+              position: absolute;
+              top: 44px;
+              right: -60px;
+              width: 150px;
+              height: 100px;
+              background-color: $basics;
+              -webkit-transform: rotate(-23deg);
+              transform: rotate(-23deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .arm {
+    position: absolute;
+    top: 55px;
+    width: 33px;
+    height: 100px;
+    border-radius: 0 0 100px 100px;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      position: absolute;
+      top: 121px;
+      left: 7px;
+      width: 220px;
+      height: 92px;
+      border-radius: 100%;
+      background-color: $basics;
+      -webkit-transform: rotate(-60deg);
+      transform: rotate(-60deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $arti_background;
+        z-index: 1;
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: -17px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $arti_background;
+        -webkit-transform: rotate(-4deg);
+        transform: rotate(-4deg);
+      }
+    }
+    &.right {
+      position: absolute;
+      top: 121px;
+      right: 7px;
+      width: 220px;
+      height: 92px;
+      border-radius: 100%;
+      background-color: $basics;
+      -webkit-transform: rotate(60deg);
+      transform: rotate(60deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $arti_background;
+        z-index: 1;
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -17px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $arti_background;
+        -webkit-transform: rotate(4deg);
+        transform: rotate(4deg);
+      }
+    }
+  }
+  .hand {
+    position: absolute;
+    top: 215px;
+    width: 39px;
+    height: 57px;
+    border-radius: 30% 30% 100% 100%;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: 46px;
+      -webkit-transform: rotate(8deg);
+      transform: rotate(8deg);
+    }
+    &.right {
+      right: 46px;
+      -webkit-transform: rotate(-8deg);
+      transform: rotate(-8deg);
+    }
+  }
+  .leg {
+    position: absolute;
+    top: 60px;
+    width: 50px;
+    height: 300px;
+    border-radius: 0 0 100px 100px;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: 117px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        width: 65px;
+        height: 55px;
+        border-radius: 10% 60% 60% 50%;
+        background-color: $basics;
+      }
+    }
+    &.right {
+      right: 117px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        width: 65px;
+        height: 55px;
+        border-radius: 10% 60% 60% 50%;
+        background-color: $basics;
+      }
+    }
+  }
+  .tail {
+    position: absolute;
+    top: 434px;
+    left: -55px;
+    width: 150px;
+    height: 90px;
+    border-radius: 10% 60% 45% 35%;
+    background-color: $arti_keycolor;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+    &:before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -4px;
+      width: 150px;
+      height: 60px;
+      border-radius: 10% 60% 50% 60%;
+      background-color: $arti_background;
+    }
+    .tail1 {
+      position: absolute;
+      top: 31px;
+      left: -10px;
+      width: 15px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .tail2 {
+      position: absolute;
+      top: 40px;
+      left: -10px;
+      width: 15px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .tail3 {
+      position: absolute;
+      top: 48px;
+      left: -10px;
+      width: 15px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .tail4 {
+      position: absolute;
+      top: 56px;
+      left: -10px;
+      width: 15px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .tail5 {
+      position: absolute;
+      top: 66px;
+      left: -10px;
+      width: 20px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: $arti_keycolor;
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+  }
+}

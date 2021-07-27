@@ -1,0 +1,598 @@
+<!DOCTYPE HTML>
+<!-- 웹파일 가기 ****\\210.110.36.134\Web -->
+<html lang="ko">
+<head>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <!-- 메타 태그들 입니다 --> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SKU MOA</title>
+
+  <!-- script 파일들 입니다. -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=27f695eb4274a012e115634b366ae323&libraries=services">
+  </script>
+  <script src="./jquery.js"></script>
+  <script type="text/javascript" src="./00js/busAPI.js"></script>
+  
+  <script type="text/javascript" src="hide.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> <!--드롭 다운 사용하기 위해-->
+  <script src="dist/js/bootstrap.min.js"></script> 
+  <script src="dist/js/bootstrap.js"></script>
+
+
+ 
+
+  <!-- css 파일들 입니다 -->
+  <link rel="stylesheet" type="text/css" href="maps.css">
+  <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="test.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="api3day.css">
+  <link rel="stylesheet" type="text/css" href="Weather.css">
+    <link rel="stylesheet" type="text/css" href="library.css">
+  <!--<link rel="stylesheet" type="text/css" href="floatingbar.css">-->
+  <link rel="stylesheet" type="text/css" href="footer.css">
+  <link rel="stylesheet" href="OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css"> 
+<!-- 네비게이션 필요 -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- 스프레드 시트 팀 작업입니다... -->
+  <link rel="stylesheet" type="text/css" href="foodtable.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> <!--구글api -->
+  <script type="text/javascript" src="LoadFoodTable.js"></script><!--스프레드 정보 읽어 와서 태그 작업 통해 테이블로 만든 뒤 해당 id 값의 div 에 추가하는 script -->
+  <script src="https://spreadsheets.google.com/feeds/cells/1tD9YnPmeUysPGJ_eMPbctq-UGbFwySU5d1DXISjzVok/2/public/values?alt=json-in-script&callback=DoData"></script>
+  <!--<script src="https://spreadsheets.google.com/feeds/cells/1fwII8ZPj0R7LxKqPqJrrakBWwvY0VLO8QvXMNE1xGQc/2/public/values?alt=json-in-script&callback=DoData"></script>--> <!-- 해당 url을 통해 위에 추가한 api통해서 JS파일의 DoData 호출 -->
+  <script type="text/javascript" src="footer_script.js"></script>
+  <script src="https://spreadsheets.google.com/feeds/cells/1tD9YnPmeUysPGJ_eMPbctq-UGbFwySU5d1DXISjzVok/1/public/values?alt=json-in-script&callback=doData2"></script>
+  <script type="text/javascript" src="Weather.js"></script>
+
+  <!-- sns post -->
+  <script type="text/javascript" src="LoadSnsPost.js"></script>
+
+</head>
+
+<body>
+
+  <!-- 헤더 부분 입니다 --> 
+    <header id="head">
+    <!-- 네비게이션 메뉴입니다. -->
+    <nav class="navbar navbar-inverse navbar-expand-sm navbar-fixed-top"> 
+      <div class="container-fluid"><!-- 컨테이너 값이 전체화면을 쓴다는 속성, width값이 100% -->
+     
+        <img src="logo.png" alt="" class="logo">
+
+        <div class="navbar-header">
+          <a class="navbar-brand" href="mashup.php">서경모아</a> <!--네비게이션 제목 -->
+          <button type="button" class="navbar-toggle" id="navButton" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span> 
+<!--               <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>    -->             
+          </button>
+
+          <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#dropdown-notice">notice</a></li>
+            <li><a href="#dropdown-weather" class="scroll">weather</a></li>
+            <li><a href="#dropdown-bab" class="scroll">오늘 뭐 먹지?</a></li>
+            <li><a href="#dropdown-bus" class="scroll">bus</a></li>
+            <li><a href="#dropdown-map" class="scroll">map</a></li>
+            <li><a class="nav-link rounded js-scroll-trigger" href="#dropdown-library">library</a></li>
+          </ul>
+        </div> 
+        </div>
+
+  <!--collapse떨어지는메뉴들-->
+      </div>
+    </nav>
+  </header>
+
+<!-- 스크롤 부드럽게 하기 -->
+<script>
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event, myNavbar){            
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+
+      document.getElementById('myNavbar').setAttribute('aria-expanded', 'false');
+      document.getElementById('myNavbar').setAttribute('style', 'height:1px;');
+      document.getElementById('navButton').setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+
+
+      <script type="text/javascript">
+  function timer() {
+    var now = new Date();
+    var min = now.getMinutes();
+    var sec = now.getSeconds();
+    min = checkTime(min);
+    sec = checkTime(sec);
+    var timeAlert = now.getHours() + " : " + min + " : " + sec;
+    document.getElementById('busTime').innerHTML=timeAlert;
+
+    setTimeout("timer()", 1000); 
+  }
+
+      function checkTime(i) { //필요없을 수도..
+      if (i<10) { i = "0" +i};
+      return i;
+    }
+</script>
+    </div>
+
+
+  <!-- floating menu -->
+      <!--<div class="floating-bar">
+      </div>-->
+      <!-- 카드들 입니다. -->
+      <div class="container">
+            <!-- 공지사항 바로가기 부분 입니다 -->
+        <div class="card border-secondary mb-3" id="dropdown-notice">
+          <h5 class="card-header">공지사항 바로가기</h5>
+          <div class="card-body">
+
+            <input type="button" onclick="window.open('https://www.skuniv.ac.kr/?vid=&mid=notice&category=&search_keyword=%ED%9C%B4%ED%95%99&search_target=title')" value="#휴학" class="btn btn-outline-secondary">
+            <input type="button" onclick="window.open('https://www.skuniv.ac.kr/?vid=&mid=notice&category=&search_keyword=%EB%B3%B5%ED%95%99&search_target=title')" value="#복학" class="btn btn-outline-secondary">
+            <input type="button" onclick="window.open('https://www.skuniv.ac.kr/?vid=&mid=notice&category=&search_keyword=%EC%9E%A5%ED%95%99%EA%B8%88&search_target=title')" value="#장학금" class="btn btn-outline-secondary">
+            <input type="button" onclick="window.open('https://www.skuniv.ac.kr/?vid=&mid=notice&category=&search_keyword=%EC%A1%B8%EC%97%85%EC%9A%94%EA%B1%B4&search_target=title')" value="#졸업요건" class="btn btn-outline-secondary">
+            <input type="button" onclick="window.open('https://www.skuniv.ac.kr/index.php?mid=notice&document_srl=135814')" value="#성적" class="btn btn-outline-secondary"> 
+            <p class="detail"> 셔틀버스시간표이미지
+            </p>
+          </div>
+        </div>       
+
+        <!-- 날씨 부분 입니다 -->
+        <div class="card border-secondary mb-3" id="dropdown-weather">
+         <h5 class="card-header">날씨</h5>
+         <div class="card-body">
+           <div class="component__weather-box">
+             <div class="component__weather-content">
+              <div class="weather-content__overview"></div>
+              <div class="weather-content__temp"></div>
+            </div>
+            <div class=component__forecast-box></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 학식 부분 입니다 -->
+      <div class="card border-secondary mb-3" id="dropdown-bab">
+        
+        <section class="card-header">
+          <h5> 오늘뭐먹지? <img src="./00image/bab.png" class="dish"></h5>
+
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a href="#owl-demo #ftab1" data-toggle="tab" class="nav-link active">북악관</a></li>
+              <li class="nav-item">
+                <a href="#ftab2" data-toggle="tab" class="nav-link">한림관</a></li>
+                <li class="nav-item">
+                  <a href="#ftab3" data-toggle="tab" class="nav-link">청운관</a></li>
+                <li class="nav-item">
+                  <a href="#ftab4" data-toggle="tab" class="nav-link">배달</a></li>
+                </ul>
+              </section>
+              <div class="tab-content card-body owl-carousel owl-theme" id="owl-demo">
+                
+                <div class="tab-pane active" id="ftab1">
+                    <div class="dataArea0">
+                      <div class="dataArea00"></div>
+                      <div class="collapse" id="tomorrow0"> 
+                        <div class="dataArea10"></div>
+                        <div class="dataArea20"></div>
+                      </div>
+                    </div> 
+                  <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#tomorrow0" aria-expanded="false" aria-controls="tomorrow0">
+                    2일치 정보 더보기
+                  </button>
+                </div>
+                <div class="tab-pane" id="ftab2">
+                    <div class="dataArea1">
+                      <div class="dataArea01"></div>
+                      <div class="collapse" id="tomorrow1"> 
+                        <div class="dataArea11"></div>
+                        <div class="dataArea21"></div>
+                      </div>
+                    </div> 
+                  <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#tomorrow1" aria-expanded="false" aria-controls="tomorrow1">
+                    2일치 정보 더보기
+                  </button>
+                </div>
+                <div class="tab-pane" id="ftab3">
+                    <div class="dataArea2">
+                      <div class="dataArea02"></div>
+                      <div class="collapse" id="tomorrow2"> 
+                        <div class="dataArea12"></div>
+                        <div class="dataArea22"></div>
+                      </div>
+                    </div> 
+                  <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#tomorrow2" aria-expanded="false" aria-controls="tomorrow2">
+                    2일치 정보 더보기
+                  </button>
+                </div>
+                 <div class="tab-pane" id="ftab4">
+                </div>
+              </div>
+            </div>
+      
+            <script type="text/javascript" src="./api3day.js"></script>
+              
+               <script src="OwlCarousel2-2.3.4/dist/owl.carousel.min.js"> </script>
+               <script src="owl_carousel.js"></script>
+
+      <!-- 버스 부분 입니다 -->
+      <div class="card border-secondary mb-3" id="dropdown-bus">
+        <h5 class="card-header">버스<button onclick="reLOAD()" class="btn btn-outline-primary" id="reButton" type="button">새로고침</button></h5>
+        
+
+        <div class="card-body">   
+          <div class = "realBus">
+          <span class="busName">1164</span><br>
+
+          <?php
+
+            //busRouteId(버스ID) = 
+            $hour = date("h");
+            $busRoute = "100100171"; //1164
+            $station = "107000239"; //길음역
+
+             //길음역 정보 (stId)
+            $query = "http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?serviceKey=v%2Br7RiBgnB46KIkpgzFQwsR7Criyo6Qp9FaowpxZm0W7bJlJL1Kt7K%2F6ffMdWR4Ue4Y9fJul1JvsJ5LCML6sdQ%3D%3D&busRouteId=";
+
+
+            $url_1164 = $query.$busRoute;
+            $html = file_get_contents($url_1164);
+            $xml = simplexml_load_string($html);
+
+            $json=json_encode($xml, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            $result = json_decode($json,true);
+
+            $itemList = $result['msgBody']['itemList'];
+            $size = count($itemList);
+            
+            if($hour < 13) {
+              if($size){
+                for($i=0; $i<$size; $i++) {
+                  $diff1 = $result['msgBody']['itemList'][$i]['stId']; //찾기
+
+                  if($diff1 === $station){
+                    //echo "true"."<br>";
+                    $stName = $result['msgBody']['itemList'][$i]['stNm'];
+                    $firstBus = $result['msgBody']['itemList'][$i]['arrmsg1'];
+                    $secondBus = $result['msgBody']['itemList'][$i]['arrmsg2'];
+                  }
+                }
+              }
+            }
+
+
+          echo "<span class=stName>".$stName."</span><br>";
+          echo "<div class=arrTime>".$firstBus."<br>".$secondBus."</div>";
+          ?>
+          <hr>
+          <span class="busName">2115</span><br>
+          <?php
+
+            
+            $hour = date("h");
+            $busRoute = "100100598"; //2115
+            $station = "107000175"; //sungsin
+
+             //성신 정보 (stId)
+            $query = "http://ws.bus.go.kr/api/rest/arrive/getArrInfoByRouteAll?serviceKey=v%2Br7RiBgnB46KIkpgzFQwsR7Criyo6Qp9FaowpxZm0W7bJlJL1Kt7K%2F6ffMdWR4Ue4Y9fJul1JvsJ5LCML6sdQ%3D%3D&busRouteId=";
+
+
+            $url_2115 = $query.$busRoute;
+            $html = file_get_contents($url_2115);
+            $xml = simplexml_load_string($html);
+
+            $json=json_encode($xml, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+            $result = json_decode($json,true);
+
+            $itemList = $result['msgBody']['itemList'];
+            $size = count($itemList);
+            
+            if($hour < 13) {
+              if($size){
+                for($i=0; $i<$size; $i++) {
+                  $diff1 = $result['msgBody']['itemList'][$i]['stId']; //찾기
+
+                  if($diff1 === $station){
+                    //echo "true"."<br>";
+                    $stName = $result['msgBody']['itemList'][$i]['stNm'];
+                    $firstBus = $result['msgBody']['itemList'][$i]['arrmsg1'];
+                    $secondBus = $result['msgBody']['itemList'][$i]['arrmsg2'];
+                  }
+                }
+              }
+
+            }
+
+          echo "<span class=stName>".$stName."</span><br>";
+          echo "<div class=arrTime>".$firstBus."<br>".$secondBus."</div>";
+              
+          ?>
+          <hr>
+          <span class="busName">셔틀버스</span>          
+            <div id="shuttle">
+              <script type="text/javascript">
+                time();
+              </script> 
+            </div>
+            <div id="busTime">
+                <script>
+                timer();
+                </script>
+              </div>
+
+             <script type="text/javascript">
+    function reLOAD() {
+      $('.realBus').fadeOut('slow').load(document.URL + ' .realBus').fadeIn("slow");
+      time();
+
+    }
+</script>
+ 
+          <br>
+          
+
+          <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#shuttleTable" aria-expanded="false" aria-controls="shuttleTable">
+               셔틀버스 시간표
+          </button>
+          
+          <div class="collapse" id ="shuttleTable">
+          <div class="table-responsive">
+            <table class="table" id="busTable">
+              <tr>
+                <th>1호</th>
+                <th>2호</th>
+                <th>3호</th>
+                <th>4호</th>
+              </tr>
+              <tbody> 
+                <tr class="ho"> 
+                  <td>8:10</td>
+                  <td>8:22</td>
+                  <td>8:30</td>
+                  <td>8:37</td>
+                </tr> 
+                <tr class="ho">
+                  <td>8:44</td>
+                  <td>8:50</td> 
+                  <td>9:05</td>
+                  <td>9:25</td> 
+                </tr> 
+                <tr class="ho">
+                  <td>9:45</td> 
+                  <td>9:55</td>
+                  <td>10:10</td>
+                  <td>10:17</td>
+                </tr> 
+                <tr class="ho">
+                  <td>10:24</td>
+                  <td>10:35</td>
+                  <td>10:50</td>
+                  <td>11:05</td>
+                </tr> 
+                <tr class="1ho">
+                  <td>11:20</td>
+                  <td>11:30</td>
+                  <td>11:40</td>
+                  <td>11:50</td>
+                </tr>
+                <tr class="1ho">
+                  <td>12:00</td>
+                  <td>12:20</td>
+                  <td>12:40</td>
+                  <td>13:00</td>
+                </tr> 
+              </tbody> 
+            </table>
+
+         </div>
+       </div>
+        </div>
+      </div>
+      </div>
+
+
+   <!-- 지도 부분 입니다 -->
+    <div class="card border-secondary mb-3" id="dropdown-map">
+      <h5 class="card-header">지도         
+        <input type="button" onclick="doDisplay()" value="category" class="btn btn-outline-secondary btn pull-right">
+        <input type="button" onclick="setDraggable(true)" value="drag on" class="btn btn-outline-secondary btn pull-right">
+        <input type="button" onclick="setDraggable(false)" value="drag off" class="btn btn-outline-secondary btn pull-right"> </h5>
+      <div class="card-body">
+        <div class="map_wrap">
+          <div id="map"></div>
+          <ul id="category">
+            <li id="CE7" data-order="0">
+             <span class="category_bg cafe"></span>
+             카페 
+           </li><br>
+           <li id ="FD6" data-order="1">
+            <span class="category_bg food"></span>
+            음식점
+          </li><br>
+          <li id="MT1" data-order="2"> 
+            <span class="category_bg mart"></span>
+            마트
+          </li><br>  
+          <li id="CS2" data-order="3"> 
+            <span class="category_bg store"></span>
+            편의점
+          </li><br>
+          <li id="HP8" data-order="4"> 
+            <span class="category_bg hospital"></span>
+            병원
+          </li><br>
+          <li id="PM9" data-order="5"> 
+            <span class="category_bg pharmacy"></span>
+            약국
+          </li><br>
+          <li id="BK9" data-order="6"> 
+            <span class="category_bg bank"></span>
+            은행
+          </li>           
+        </ul>
+        <div class="custom_zoomcontrol radius_border"> 
+          <!-- <span onclick="zoomIn()" class="test1"> <img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png" alt="확대" class="test2"> </span> -->
+          <!--         <span onclick="zoomIn()" src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png"></span> -->
+         <span onclick="zoomIn()" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+         <span onclick="zoomOut()" class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+         <!--  <span onclick="zoomOut()"><img src="http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span> -->
+        </div>
+      </div>
+    </div>
+  </div>   
+
+  
+            <!-- 도서관 좌석 부분 입니다 -->
+      <div class="card border-secondary mb-3" id="dropdown-library">
+  <section class="card-header">
+    <h5>도서관좌석정보</h5>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="#ltab0" data-toggle="tab" class="nav-link active">7층</a></li>
+      <li class="nav-item">
+        <a href="#ltab1" data-toggle="tab" class="nav-link">8층</a></li>
+      <li class="nav-item">
+        <a href="#ltab2" data-toggle="tab" class="nav-link">Green</a></li>
+      <li class="nav-item">
+        <a href="#ltab3" data-toggle="tab" class="nav-link">Blue</a></li>
+      <li class="nav-item">
+        <a href="#ltab4" data-toggle="tab" class="nav-link">Orange</a></li>
+      <li class="nav-item">
+        <a href="#ltab5" data-toggle="tab" class="nav-link">Red</a></li>
+    </ul>
+  </section>
+      <div class="tab-content card-body">
+        <?php
+            $room_name=array("7층","8층","GREEN ROOM","BLUE ROOM","ORANGE ROOM","RED ROOM");
+            $room_stat=array("열람실 상태:","전체좌석 : ","사용좌석 : ","잔여좌석 : ","");
+            $command=escapeshellcmd('python ./test.py');
+            exec($command,$out,$stat);
+            // $output=iconv("EUC-KR","UTF-8", $out);
+            $room=6;
+            $info=5;
+            for($i=0;$i<$room;$i++) {
+              if($i==0) echo "<div class=\"tab-pane active\" id=\"ltab".$i."\"><section>";
+              else echo "<div class=\"tab-pane\" id=\"ltab".$i."\"><article>";
+              for($j=1;$j<=$info;$j++) {
+                echo "<article class=\"lib".($j-1)."\">".$room_stat[$j-1].iconv("EUC-KR","UTF-8",$out[($i*$info)+$j-1])."</article>";
+                if(($j%$info)==1) echo "<hr>";
+              }
+              echo "</section></div>";
+            }
+        ?>
+    </div>
+  </div>
+
+
+
+      <div class="card border-secondary mb-3">
+        <h5 class="card-header">서경대학교 관련 게시물</h5>
+        <div>안녕안녕</div>
+      </div>
+
+                      <!-- 디데이 부분 입니다 -->
+<!--       <div class="card border-secondary mb-2">
+        <h5 class="card-header">디데이 </h5>
+        <div class="card-body ">
+          <h5 class="card-title">개강 D-00</h5>
+          <a href="#" class="btn-secondary">학사일정 ㄱ</a>
+        </div>
+      </div> -->
+
+      <!-- ******여기부터 --> 
+
+<!--       <div class="card border-secondary mb-3" id="dropdown-todaymenu">
+        <h5 class="card-header">오늘 점심은?</h5>
+        <div id="data"></div>
+      </div> -->
+    </div>
+    <!-- 여기까지 --> 
+
+    
+    <?php
+            $fname=date("Y").".csv";
+            $path="./".$fname;
+            
+            $sep=",";
+            $array_lines=file("$path");
+            for($i=0;$i<count($array_lines);$i++) {
+              $temp=[];
+              $tok=strtok(iconv("EUC-KR","UTF-8",$array_lines[$i]),$sep);
+              for($j=0;$j<4;$j++){
+                $temp[$j]=$tok;
+                $tok=strtok($sep);
+              }
+            
+              $year=date("Y");
+              $month='0';
+              $day='0';
+              //월구하기 년이 포함되어 있으면 년과월 분해해서 구함
+              if(strpos($temp[0],"년")){
+                $year=strtok($temp[0],"년");
+                $month=strtok("년");
+              }
+              if($month=='0')
+                $month=$temp[0];
+              //날짜 구하기
+              if(strpos($temp[1],"~")){
+                $day=strtok($temp[1],"~");
+              }
+              else{
+                $day=$temp[1];
+              }
+              $target='';
+              if($year=='0'){
+                $target=date_create(date("Y").'-'.$month.'-'.$day);
+              }
+              else {
+                $target=date_create($year.'-'.$month.'-'.$day);
+              }
+            
+              $today=date_create(date("Y-m-d"));
+              $dday=date_diff($today,$target);
+              if($year>date("Y")) {
+                echo $dday->days."&nbsp".$temp[3]."<br>";
+                break;
+              }
+              if($month>=date('m')) {
+                if(($month==date('m'))&&($day>date('j'))) {
+                  echo $dday->days."&nbsp".$temp[3]."<br>";
+                  break;
+                }
+                else {
+                  echo "<span class=\"dday\"><h3>".$temp[3]."&nbsp D-".$dday->days."</h3></span>";
+                break;
+                }
+                
+              }
+            }   
+?>
+    <footer>
+      <div id="footer_link"></div>
+      <div id="footer_contents">
+        <div id=footer_contents_text>
+          <p class="footer_texts">[02713] 서울시 성북구 서경로 124(정릉동 16-1)</p>
+          <p class="footer_texts">Tel : 02 940 7114</p>
+          <p class="footer_texts">Fax : 02 919 0345</p>
+        </div>
+        <div id=footer_contents_logo>
+          <img id="footer_logo_png" src="sku_footer_logo_skon.png">
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="map.js"></script>
+  </body>
+  </html>
+

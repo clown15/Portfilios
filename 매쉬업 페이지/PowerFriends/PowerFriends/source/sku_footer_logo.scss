@@ -1,0 +1,193 @@
+$_main: #53cb4f;
+$_sub: rgba(139, 228, 135, 0.78);
+$_main_on: #13ff00;
+$_sub_on: rgb(72, 233, 93);
+$_face: #ffffff;
+$_neon: #b4de56;
+$_background: rgb(0, 18, 62);
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+body {
+  background: #000000;
+}
+
+.power_skon {
+  transform: scale(0.1, 0.1);
+  position: absolute;
+  top: -160px;
+  left: -160px;
+  width: 400px;
+  height: 380px;
+  z-index: 0;
+
+  .ear {
+    position: absolute;
+    top: 140px;
+    width: 150px;
+    height: 150px;
+    border-radius: 9%;
+    background-color: $_face;
+    z-index: 1;
+    &.left {
+      left: 20px;
+      transform: rotate(5deg) skew(15deg, 15deg);
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 90px;
+        height: 100px;
+        border-radius: 9%;
+        background-color: $_sub;
+        transition: all 1s;
+      }
+    }
+    &.right {
+      right: 20px;
+      transform: rotate(-5deg) skew(-15deg, -15deg);
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 90px;
+        height: 100px;
+        border-radius: 9%;
+        background-color: $_sub;
+        transition: all 1s;
+      }
+    }
+  }
+  .face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background-color: $_face;
+    z-index: 1;
+  }
+  .mouth {
+    position: absolute;
+    top: 400px;
+    left: 166px;
+    width: 70px;
+    height: 46px;
+    border: 8px solid $_main;
+    border-radius: 100%;
+    z-index: 2;
+    transition: all 1s;
+    .mouth_hide {
+      position: absolute;
+      top: -8px;
+      left: -15px;
+      width: 80px;
+      height: 30px;
+      background-color: $_face;
+      z-index: 2;
+    }
+    .mouth_circle {
+      position: absolute;
+      top: 17px;
+      width: 8px;
+      height: 10px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $_main;
+      z-index: 3;
+      transition: all 1s;
+      &.left {
+        left: -6px;
+        transform: rotate(-45deg);
+      }
+      &.right {
+        right: -6px;
+        transform: rotate(45deg);
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -7px;
+      width: 56px;
+      height: 30px;
+      border: 6px solid $_main;
+      border-radius: 100%;
+      visibility: hidden;
+      z-index: 0;
+      transition: all 1s;
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 100px;
+    left: 4px;
+    z-index: 2;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $_main;
+      transition: all 2s;
+      z-index: 3;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $_face;
+      z-index: 3;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $_face;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $_main;
+      transition: all 2s;
+      z-index: 3;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $_main;
+      z-index: 3;
+      transition: all 2s;
+      &.left {
+        left: 140px;
+        transform: rotate(65deg);
+      }
+      &.right {
+        left: 229px;
+        transform: rotate(-65deg);
+      }
+    }
+  }
+}

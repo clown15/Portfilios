@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto; }
+
+body {
+  background: #cbdffd; }
+
+.symbol_huni {
+  position: relative;
+  top: 100px;
+  width: 30px;
+  height: 300px;
+  z-index: 0; }
+  .symbol_huni .left {
+    position: absolute;
+    top: 35px;
+    left: -40px;
+    width: 30px;
+    height: 60px;
+    border-radius: 5px;
+    background-color: #ee0ecc; }
+  .symbol_huni .center {
+    position: absolute;
+    width: 30px;
+    height: 95px;
+    border-radius: 5px;
+    background-color: #ee0ecc; }
+  .symbol_huni .right {
+    position: absolute;
+    top: -35px;
+    right: -40px;
+    width: 30px;
+    height: 130px;
+    border-radius: 5px;
+    background-color: #ee0ecc; }
+
+.symbol_enzi {
+  position: relative;
+  top: 100px;
+  width: 30px;
+  height: 300px;
+  z-index: 0; }
+  .symbol_enzi .outline {
+    position: absolute;
+    width: 166px;
+    height: 100px;
+    border-radius: 5px;
+    border: 15px solid deepskyblue; }
+    .symbol_enzi .outline .tail {
+      position: absolute;
+      top: 15px;
+      right: -30px;
+      width: 20px;
+      height: 40px;
+      border-radius: 5px;
+      background-color: deepskyblue; }
+    .symbol_enzi .outline .inline {
+      position: absolute;
+      width: 136px;
+      height: 70px;
+      background-color: #ffffff; }
+      .symbol_enzi .outline .inline .left {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 30px;
+        height: 60px;
+        background-color: #00769d; }
+      .symbol_enzi .outline .inline .center_left {
+        position: absolute;
+        top: 5px;
+        left: 37px;
+        width: 30px;
+        height: 60px;
+        background-color: #00769d; }
+      .symbol_enzi .outline .inline .center_right {
+        position: absolute;
+        top: 5px;
+        right: 37px;
+        width: 30px;
+        height: 60px;
+        background-color: #00769d; }
+      .symbol_enzi .outline .inline .right {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 30px;
+        height: 60px;
+        background-color: #00769d; }
+
+.symbol_arti {
+  position: relative;
+  top: 100px;
+  width: 30px;
+  height: 300px;
+  z-index: 0; }
+  .symbol_arti .circle {
+    position: absolute;
+    top: 170px; }
+    .symbol_arti .circle .circle_left {
+      position: absolute;
+      left: -65px;
+      width: 90px;
+      height: 70px;
+      border-radius: 100%;
+      border: 10px solid goldenrod; }
+    .symbol_arti .circle .circle_right {
+      position: absolute;
+      right: -145px;
+      width: 90px;
+      height: 70px;
+      border-radius: 100%;
+      border: 10px solid goldenrod; }
+    .symbol_arti .circle .circle_hide_left {
+      position: absolute;
+      top: 30px;
+      left: -75px;
+      width: 90px;
+      height: 40px;
+      background-color: #cbdffd;
+      transform: rotate(30deg); }
+    .symbol_arti .circle .circle_hide_right {
+      position: absolute;
+      top: 30px;
+      right: -155px;
+      width: 90px;
+      height: 40px;
+      background-color: #cbdffd;
+      transform: rotate(-30deg); }
+    .symbol_arti .circle .circle_center {
+      position: absolute;
+      width: 80px;
+      height: 65px;
+      border-radius: 100%;
+      border: 10px solid goldenrod; }
+    .symbol_arti .circle .circle_hide_center_left {
+      position: absolute;
+      top: 50px;
+      left: 14px;
+      width: 20px;
+      height: 20px;
+      background-color: #cbdffd;
+      transform: rotate(-50deg); }
+    .symbol_arti .circle .circle_hide_center_center {
+      position: absolute;
+      top: 50px;
+      left: 24px;
+      width: 30px;
+      height: 20px;
+      background-color: #cbdffd; }
+    .symbol_arti .circle .circle_hide_center_right {
+      position: absolute;
+      top: 50px;
+      right: -66px;
+      width: 20px;
+      height: 20px;
+      background-color: #cbdffd;
+      transform: rotate(50deg); }
+    .symbol_arti .circle .circle_hide_center_bottom {
+      position: absolute;
+      top: 54px;
+      left: -10px;
+      width: 100px;
+      height: 20px;
+      background-color: #cbdffd; }
+  .symbol_arti .line {
+    position: absolute;
+    top: -15px; }
+    .symbol_arti .line .left_line {
+      position: absolute;
+      left: -20px;
+      width: 10px;
+      height: 210px;
+      border-radius: 10px;
+      transform: rotate(20deg);
+      background-color: goldenrod; }
+    .symbol_arti .line .right_line {
+      position: absolute;
+      right: -100px;
+      width: 10px;
+      height: 210px;
+      border-radius: 10px;
+      transform: rotate(-20deg);
+      background-color: goldenrod; }
+
+.symbol_miyeah {
+  position: relative;
+  top: 100px;
+  width: 30px;
+  height: 500px;
+  z-index: 0; }
+  .symbol_miyeah .sharp {
+    top: 0;
+    position: absolute; }
+    .symbol_miyeah .sharp .sharp_left {
+      position: absolute;
+      left: -30px;
+      width: 90px;
+      height: 250px;
+      border-radius: 200px 80px 0 80px;
+      transform: rotate(-45deg);
+      background-color: #1abc9c; }
+    .symbol_miyeah .sharp .sharp_right {
+      position: absolute;
+      right: -179px;
+      width: 90px;
+      height: 250px;
+      border-radius: 80px 200px 80px 0;
+      transform: rotate(45deg);
+      background-color: #1abc9c; }
+  .symbol_miyeah .circle {
+    top: 230px;
+    position: absolute; }
+    .symbol_miyeah .circle .circle_left {
+      position: absolute;
+      left: -15px;
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      background-color: #1abc9c; }
+    .symbol_miyeah .circle .circle_right {
+      position: absolute;
+      right: -165px;
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      background-color: #1abc9c; }
+
+.symbol_skon {
+  position: relative;
+  top: 100px;
+  width: 30px;
+  height: 500px;
+  z-index: 0; }
+  .symbol_skon .leaf {
+    position: absolute;
+    top: 0; }
+    .symbol_skon .leaf .leaf_outer {
+      position: absolute;
+      top: 0;
+      width: 300px;
+      height: 300px;
+      border-radius: 55% 5% 55% 5%/55% 5% 55% 5%;
+      background-color: #46fd1b;
+      transform: skewX(-10deg) skewY(-5deg); }
+    .symbol_skon .leaf .leaf_inner {
+      position: absolute;
+      top: 215px;
+      left: 15px;
+      width: 50px;
+      height: 80px;
+      border-radius: 55% 5% 55% 5%/55% 5% 55% 5%;
+      background-color: #cbdffd;
+      transform: rotate(0deg) skewX(-35deg) skewY(-30deg); }
+  .symbol_skon .hide {
+    position: absolute;
+    top: 280px;
+    left: -45px;
+    width: 70px;
+    height: 50px;
+    z-index: 1;
+    transform: rotate(45deg);
+    background-color: #cbdffd; }
+    .symbol_skon .hide:before {
+      position: absolute;
+      content: "";
+      top: -10px;
+      left: -1px;
+      width: 23px;
+      height: 21px;
+      border-radius: 100%;
+      transform: rotate(-60deg);
+      background-color: #46fd1b; }
+    .symbol_skon .hide:after {
+      position: absolute;
+      content: "";
+      top: -14px;
+      right: 5px;
+      width: 21px;
+      height: 20px;
+      border-radius: 100%;
+      transform: rotate(-60deg);
+      background-color: #46fd1b; }
+
+/*# sourceMappingURL=power_symbol.css.map */

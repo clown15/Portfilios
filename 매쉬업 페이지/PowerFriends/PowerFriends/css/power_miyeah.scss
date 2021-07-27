@@ -1,0 +1,1031 @@
+@import "power_color.scss";
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+body {
+  background: $miyeah_background;
+}
+.power_miyeah {
+  position: relative;
+  float: left;
+  margin: 0 0 0 4%;
+  top: 150px;
+  width: 400px;
+  height: 380px;
+  -webkit-transform: scale(0.85, 0.85);
+  transform: scale(0.85, 0.85);
+  z-index: 0;
+  &:hover {
+    .symbol_miyeah {
+      visibility: visible;
+      -webkit-transform: rotate(-40deg) scale(0.7, 0.7);
+      transform: rotate(-40deg) scale(0.7, 0.7);
+      .sharp {
+        &:after,
+        &:before {
+          background-color: $miyeah_keycolor_hover;
+        }
+      }
+      .circle {
+        &:after,
+        &:before {
+          background-color: $miyeah_keycolor_hover;
+        }
+      }
+    }
+    .neon_face {
+      box-shadow: 0 0 50px 5px $miyeah_neon;
+    }
+    .ear {
+      box-shadow: 0 0 50px 5px $miyeah_neon;
+      &.left {
+        top: -30px;
+        left: -40px;
+        -webkit-transform: rotate(-18deg);
+        transform: rotate(-18deg);
+        &:after {
+          background-color: $miyeah_ear_hover;
+        }
+      }
+      &.right {
+        top: 42px;
+        left: 265px;
+        -webkit-transform: rotate(50deg);
+        transform: rotate(50deg);
+        &:after {
+          background-color: $miyeah_ear_hover;
+        }
+      }
+    }
+    .mouth {
+      .mouth_left {
+        left: 151px;
+        width: 55px;
+        border-color: $miyeah_keycolor_hover;
+        .mouth_left_circle {
+          &.left {
+            background-color: $miyeah_keycolor_hover;
+          }
+        }
+      }
+      .mouth_right {
+        width: 55px;
+        border-color: $miyeah_keycolor_hover;
+        .mouth_right_circle {
+          background-color: $miyeah_keycolor_hover;
+          &.left {
+            left: -9px;
+            width: 10px;
+          }
+          &.right {
+            left: 39px;
+          }
+        }
+        .tooth {
+          left: 15px;
+          border-color: $miyeah_keycolor_hover;
+        }
+      }
+      .tongue {
+        top: 400px;
+        border-color: $miyeah_keycolor_hover;
+        .line {
+          background-color: $miyeah_keycolor_hover;
+        }
+      }
+    }
+    .power_btn {
+      .btn_center,
+      .btn_ring,
+      .btn_ring_hide.left,
+      .btn_ring_hide.right {
+        background-color: $miyeah_keycolor_hover;
+      }
+    }
+  }
+  .neon_face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+  }
+  .ear {
+    position: absolute;
+    width: 240px;
+    height: 320px;
+    top: -10px;
+    border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: -90px;
+      -webkit-transform: rotate(-13deg) skewX(15deg);
+      transform: rotate(-13deg) skewX(15deg);
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        width: 120px;
+        height: 160px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+    &.right {
+      left: 250px;
+      -webkit-transform: rotate(13deg) skewX(-15deg);
+      transform: rotate(13deg) skewX(-15deg);
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 50px;
+        width: 120px;
+        height: 160px;
+        top: 70px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+  }
+  .face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background-color: $basics;
+    z-index: 1;
+  }
+  .mouth {
+    .mouth_left {
+      position: absolute;
+      top: 400px;
+      left: 161px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      .mouth_left_hide {
+        position: absolute;
+        top: -15px;
+        left: -50px;
+        width: 150px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_left_circle {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        &.left {
+          left: -8px;
+          -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+      }
+    }
+    .mouth_right {
+      position: absolute;
+      top: 400px;
+      left: 198px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      .mouth_right_hide {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 68px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_right_circle {
+        position: absolute;
+        top: 15px;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        &.left {
+          left: -8px;
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: all 0.5s;
+        }
+        &.right {
+          left: 29px;
+          -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+      }
+      .tooth {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        border-bottom: 5px solid $miyeah_keycolor;
+        border-right: 5px solid $miyeah_keycolor;
+        border-left: none;
+        border-top: none;
+        border-radius: 35%;
+        -webkit-transform: rotate(55deg) skewX(25deg);
+        transform: rotate(55deg) skewX(25deg);
+        z-index: 2;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+    }
+    .tongue {
+      position: absolute;
+      top: 340px;
+      left: 183px;
+      width: 40px;
+      height: 80px;
+      border: 5px solid $miyeah_keycolor;
+      border-radius: 100px;
+      z-index: 1;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+      .line {
+        position: absolute;
+        top: -8px;
+        left: 12px;
+        width: 4px;
+        height: 70px;
+        border-radius: 100px;
+        background-color: $miyeah_keycolor;
+        z-index: 1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 100px;
+    left: 4px;
+    z-index: 2;
+    -webkit-transition: all 2s;
+    transition: all 2s;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      -webkit-transition: all 2s;
+      transition: all 2s;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      -webkit-transition: all 2s;
+      transition: all 2s;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      &.left {
+        left: 140px;
+        -webkit-transform: rotate(65deg);
+        transform: rotate(65deg);
+        -webkit-transition: all 2s;
+        transition: all 2s;
+      }
+      &.right {
+        left: 228px;
+        -webkit-transform: rotate(-65deg);
+        transform: rotate(-65deg);
+        -webkit-transition: all 2s;
+        transition: all 2s;
+      }
+    }
+  }
+  .symbol_miyeah {
+    position: absolute;
+    top: 300px;
+    right: -220px;
+    width: 190px;
+    height: 210px;
+    z-index: 1;
+    visibility: hidden;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+    .sharp {
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: 70px;
+        height: 200px;
+        border-radius: 100px 35px 100px 30px;
+        background-color: $miyeah_keycolor;
+        -webkit-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 20px;
+        width: 70px;
+        height: 200px;
+        border-radius: 35px 100px 30px 100px;
+        background-color: $miyeah_keycolor;
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg);
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+    .circle {
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 190px;
+        left: 5px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_keycolor;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 190px;
+        right: 5px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_keycolor;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+.power_miyeah_body {
+  position: relative;
+  float: left;
+  margin: 0 3% 0 5%;
+  top: 80px;
+  width: 400px;
+  height: 380px;
+  z-index: 0;
+  transform: scale(0.7, 0.7);
+
+  &:hover {
+    .miyeah_body {
+      .trunk {
+        .symbol_miyeah {
+          .sharp {
+            &.left,
+            &.right {
+              background-color: $miyeah_keycolor_hover;
+            }
+          }
+          .circle {
+            &.left,
+            &.right {
+              background-color: $miyeah_keycolor_hover;
+            }
+          }
+        }
+      }
+    }
+    .ear {
+      &.left {
+        top: -30px;
+        left: -40px;
+        -webkit-transform: rotate(-18deg);
+        transform: rotate(-18deg);
+        &:after {
+          background-color: $miyeah_ear_hover;
+        }
+      }
+      &.right {
+        top: 42px;
+        left: 265px;
+        -webkit-transform: rotate(50deg);
+        transform: rotate(50deg);
+        &:after {
+          background-color: $miyeah_ear_hover;
+        }
+      }
+    }
+    .mouth {
+      .mouth_left {
+        left: 151px;
+        width: 55px;
+        border-color: $miyeah_keycolor_hover;
+        .mouth_left_circle {
+          &.left {
+            background-color: $miyeah_keycolor_hover;
+          }
+        }
+      }
+      .mouth_right {
+        width: 55px;
+        border-color: $miyeah_keycolor_hover;
+        .mouth_right_circle {
+          background-color: $miyeah_keycolor_hover;
+          &.left {
+            left: -9px;
+            width: 10px;
+          }
+          &.right {
+            left: 39px;
+          }
+        }
+        .tooth {
+          left: 15px;
+          border-color: $miyeah_keycolor_hover;
+        }
+      }
+      .tongue {
+        top: 400px;
+        border-color: $miyeah_keycolor_hover;
+        .line {
+          background-color: $miyeah_keycolor_hover;
+        }
+      }
+    }
+    .power_btn {
+      .btn_center,
+      .btn_ring,
+      .btn_ring_hide.left,
+      .btn_ring_hide.right {
+        background-color: $miyeah_keycolor_hover;
+      }
+    }
+  }
+  .ear {
+    position: absolute;
+    top: -10px;
+    width: 240px;
+    height: 320px;
+    border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: -90px;
+      -webkit-transform: rotate(-13deg) skewX(15deg);
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        width: 120px;
+        height: 160px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+    &.right {
+      left: 250px;
+      -webkit-transform: rotate(13deg) skewX(-15deg);
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 70px;
+        right: 50px;
+        width: 120px;
+        height: 160px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        -webkit-transition: all 1s;
+        transition: all 1s;
+      }
+    }
+  }
+  .face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background-color: $basics;
+    z-index: 1;
+  }
+  .mouth {
+    .mouth_left {
+      position: absolute;
+      top: 400px;
+      left: 161px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      .mouth_left_hide {
+        position: absolute;
+        top: -15px;
+        left: -50px;
+        width: 150px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_left_circle {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        &.left {
+          left: -8px;
+          -webkit-transform: rotate(-30deg);
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+      }
+    }
+    .mouth_right {
+      position: absolute;
+      top: 400px;
+      left: 198px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      .mouth_right_hide {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 68px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_right_circle {
+        position: absolute;
+        top: 15px;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        &.left {
+          left: -8px;
+          -webkit-transform: rotate(0deg);
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+        &.right {
+          left: 29px;
+          -webkit-transform: rotate(30deg);
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+        }
+      }
+      .tooth {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        border-bottom: 5px solid $miyeah_keycolor;
+        border-right: 5px solid $miyeah_keycolor;
+        border-left: none;
+        border-top: none;
+        border-radius: 35%;
+        z-index: 2;
+        -webkit-transform: rotate(55deg) skewX(25deg);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+      }
+    }
+    .tongue {
+      position: absolute;
+      top: 340px;
+      left: 183px;
+      width: 40px;
+      height: 80px;
+      border: 5px solid $miyeah_keycolor;
+      border-radius: 100px;
+      z-index: 1;
+      -webkit-transition: all 0.2s;
+      transition: all 0.2s;
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.3s;
+      .line {
+        position: absolute;
+        top: -8px;
+        left: 12px;
+        width: 4px;
+        height: 70px;
+        border-radius: 100px;
+        background-color: $miyeah_keycolor;
+        z-index: 1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 100px;
+    left: 4px;
+    z-index: 2;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      -webkit-transition: all 1s;
+      transition: all 1s;
+      &.left {
+        left: 140px;
+        -webkit-transform: rotate(65deg);
+      }
+      &.right {
+        left: 228px;
+        -webkit-transform: rotate(-65deg);
+      }
+    }
+  }
+  .miyeah_body {
+    position: absolute;
+    top: 440px;
+    width: 400px;
+    height: 370px;
+    z-index: 0;
+    .trunk {
+      position: absolute;
+      top: 2px;
+      left: 112px;
+      width: 176px;
+      height: 215px;
+      border-radius: 0;
+      background-color: $basics;
+      z-index: 2;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 130px;
+        width: 170px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: $basics;
+      }
+      .symbol_miyeah {
+        position: absolute;
+        top: -126px;
+        left: 65px;
+        width: 30px;
+        height: 500px;
+        z-index: 2;
+        -webkit-transform: scale(0.2, 0.2);
+        .sharp {
+          position: absolute;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+          &.left {
+            position: absolute;
+            left: -30px;
+            width: 90px;
+            height: 250px;
+            border-radius: 200px 80px 0 80px;
+            background-color: $miyeah_keycolor;
+            -webkit-transform: rotate(-45deg);
+          }
+          &.right {
+            position: absolute;
+            right: -179px;
+            width: 90px;
+            height: 250px;
+            border-radius: 80px 200px 80px 0;
+            background-color: $miyeah_keycolor;
+            -webkit-transform: rotate(45deg);
+          }
+        }
+        .circle {
+          position: absolute;
+          top: 125px;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+          &.left {
+            position: absolute;
+            left: -15px;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background-color: $miyeah_keycolor;
+          }
+          &.right {
+            position: absolute;
+            right: -165px;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background-color: $miyeah_keycolor;
+          }
+        }
+      }
+    }
+  }
+  .arm {
+    position: absolute;
+    top: 55px;
+    width: 33px;
+    height: 100px;
+    border-radius: 0 0 100px 100px;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      position: absolute;
+      top: -4px;
+      left: -22px;
+      width: 229px;
+      height: 92px;
+      border: 5px solid $miyeah_background;
+      border-radius: 100%;
+      background-color: $basics;
+      -webkit-transform: rotate(200deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_background;
+        z-index: 1;
+        -webkit-transform: rotate(10deg);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 48px;
+        left: 24px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_background;
+        -webkit-transform: rotate(6deg);
+      }
+    }
+    &.right {
+      position: absolute;
+      top: 71px;
+      right: 7px;
+      width: 220px;
+      height: 92px;
+      border: 5px solid $miyeah_background;
+      border-radius: 100%;
+      background-color: $basics;
+      -webkit-transform: rotate(76deg);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_background;
+        z-index: 1;
+        -webkit-transform: rotate(10deg);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -64px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: $miyeah_background;
+        -webkit-transform: rotate(4deg);
+      }
+    }
+  }
+  .hand {
+    position: absolute;
+    width: 40px;
+    height: 57px;
+    border-radius: 30% 30% 100% 100%;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      top: -15px;
+      left: -9px;
+      -webkit-transform: rotate(133deg);
+    }
+    &.right {
+      top: 163px;
+      right: 74px;
+      -webkit-transform: rotate(1deg);
+      border: 5px solid $miyeah_background;
+      border-top: none;
+      border-right: $miyeah_background;
+    }
+  }
+  .leg {
+    position: absolute;
+    top: 60px;
+    width: 50px;
+    height: 300px;
+    border-radius: 0 0 100px 100px;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: 112px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        width: 65px;
+        height: 55px;
+        border-radius: 10% 60% 60% 50%;
+        background-color: $basics;
+      }
+    }
+    &.right {
+      right: 112px;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        width: 65px;
+        height: 55px;
+        border-radius: 10% 60% 60% 50%;
+        background-color: $basics;
+      }
+    }
+  }
+  .tail {
+    position: absolute;
+    top: 9px;
+    left: 163px;
+    width: 280px;
+    height: 200px;
+    border-radius: 0 0 180px 100px;
+    background-color: $basics;
+    z-index: 0;
+    -webkit-transform: rotate(-20deg);
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: 131px;
+      width: 150px;
+      height: 60px;
+      border-radius: 55% 5% 70% 50%/70% 5% 90% 50%;
+      background-color: $miyeah_background;
+    }
+  }
+}

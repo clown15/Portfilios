@@ -1,0 +1,24 @@
+1 Cent OS 7.0 (64 bit) 14.63.166.83 22 root qK4cgbigqpwd!# ÀÌ¿ëÁß  
+
+172.27.0.94
+
+[Thu Jul 19 18:46:25.363949 2018] [:error] [pid 15537] [remote 59.6.117.97:180] mod_wsgi (pid=15537): Target WSGI script '/home/cswuri/website/website/wsgi.py' cannot be loaded as Python module.
+[Thu Jul 19 18:46:25.364014 2018] [:error] [pid 15537] [remote 59.6.117.97:180] mod_wsgi (pid=15537): Exception occurred processing WSGI script '/home/cswuri/website/website/wsgi.py'.
+[Thu Jul 19 18:46:25.364034 2018] [:error] [pid 15537] [remote 59.6.117.97:180] Traceback (most recent call last):
+[Thu Jul 19 18:46:25.364052 2018] [:error] [pid 15537] [remote 59.6.117.97:180]   File "/home/cswuri/website/website/wsgi.py", line 13, in <module>
+[Thu Jul 19 18:46:25.364131 2018] [:error] [pid 15537] [remote 59.6.117.97:180]     from django.core.wsgi import get_wsgi_application
+[Thu Jul 19 18:46:25.364146 2018] [:error] [pid 15537] [remote 59.6.117.97:180]   File "/usr/lib64/python3.4/site-packages/django/__init__.py", line 1, in <module>
+[Thu Jul 19 18:46:25.364216 2018] [:error] [pid 15537] [remote 59.6.117.97:180]     from django.utils.version import get_version
+[Thu Jul 19 18:46:25.364230 2018] [:error] [pid 15537] [remote 59.6.117.97:180]   File "/usr/lib64/python3.4/site-packages/django/utils/version.py", line 61, in <module>
+[Thu Jul 19 18:46:25.364279 2018] [:error] [pid 15537] [remote 59.6.117.97:180]     @functools.lru_cache()
+[Thu Jul 19 18:46:25.364296 2018] [:error] [pid 15537] [remote 59.6.117.97:180] AttributeError: 'module' object has no attribute 'lru_cache'
+[Thu Jul 19 18:46:25.429627 2018] [:error] [pid 15537] [remote 59.6.117.97:176] mod_wsgi (pid=15537): Target WSGI script '/home/cswuri/website/website/wsgi.py' cannot be loaded as Python module.
+[Thu Jul 19 18:46:25.429641 2018] [:error] [pid 15537] [remote 59.6.117.97:176] mod_wsgi (pid=15537): Exception occurred processing WSGI script '/home/cswuri/website/website/wsgi.py'.
+[Thu Jul 19 18:46:25.429658 2018] [:error] [pid 15537] [remote 59.6.117.97:176] Traceback (most recent call last):
+[Thu Jul 19 18:46:25.429676 2018] [:error] [pid 15537] [remote 59.6.117.97:176]   File "/home/cswuri/website/website/wsgi.py", line 13, in <module>
+[Thu Jul 19 18:46:25.429703 2018] [:error] [pid 15537] [remote 59.6.117.97:176]     from django.core.wsgi import get_wsgi_application
+[Thu Jul 19 18:46:25.429715 2018] [:error] [pid 15537] [remote 59.6.117.97:176]   File "/usr/lib64/python3.4/site-packages/django/__init__.py", line 1, in <module>
+[Thu Jul 19 18:46:25.429731 2018] [:error] [pid 15537] [remote 59.6.117.97:176]     from django.utils.version import get_version
+[Thu Jul 19 18:46:25.429742 2018] [:error] [pid 15537] [remote 59.6.117.97:176]   File "/usr/lib64/python3.4/site-packages/django/utils/version.py", line 61, in <module>
+[Thu Jul 19 18:46:25.429757 2018] [:error] [pid 15537] [remote 59.6.117.97:176]     @functools.lru_cache()
+[Thu Jul 19 18:46:25.429771 2018] [:error] [pid 15537] [remote 59.6.117.97:176] AttributeError: 'module' object has no attribute 'lru_cache'

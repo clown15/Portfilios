@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>waitlist</title>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accountlist.css' %}">
+    <!-- Java Script -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "mainapp/vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{%static "mainapp/css/simple-sidebar.css"%}' rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <script src='{% static "mainapp/vendor/jquery/jquery.min.js" %}'></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['table']});
+        google.charts.setOnLoadCallback(accountTable);
+
+         function accountTable() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'ID');
+            data.addColumn('string', '이름');
+            data.addColumn('string', '생성일');
+            data.addColumn('string', '그룹');
+            data.addColumn('string', '전화번호');
+            data.addColumn('string', '관리자승인');
+            data.addColumn('string', '가입 승인');
+
+            {% for account in list %}
+                {%  with pk=account.id %}
+                data.addRow(['{{ account.idname }}','{{ account.name }}','{{ account.cdate|date:"Y.M.d" }}','{{ account.groupname }}','{{account.phonenumber}}','<button type="button" onclick="location.href= \'http://14.63.166.83:80/signup/{{ pk }}/1/{{ reqid }}\'">관리자승인</button>','<button type="button" onclick="location.href= \'http://14.63.166.83:80/signup/{{ pk }}/0/{{ reqid }}\'">가입승인</button>'])
+                {%  endwith %}
+            {% endfor %}
+
+            var table = new  google.visualization.Table(document.getElementById('account_list'));
+            table.draw(data, {showRowNumber: true, width: '100%', allowHtml: 'true'});
+        }
+    </script>
+</head>
+<body>
+    
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:history.back()"><font color=white>뒤로가기</font></a>
+                </li>
+               
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    <div id="Top">
+        <h2><li>관리자 로그인</li>승인 대기  리스트</h2>
+    </div>
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Menu</a>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+        <div id="main">
+            <div id="account_list"></div>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+
+   
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+</body>
+</html>

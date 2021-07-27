@@ -1,0 +1,45 @@
+#total_menu, #main #dataArea0, #main #dataArea1, #main #dataArea2 {
+  width: 400px;
+  height: 600px; }
+
+#menu, #main #dataArea0 #dataArea00, #main #dataArea0 #dataArea01, #main #dataArea0 #dataArea02, #main #dataArea1 #dataArea10, #main #dataArea1 #dataArea11, #main #dataArea1 #dataArea12, #main #dataArea2 #dataArea20, #main #dataArea2 #dataArea21, #main #dataArea2 #dataArea22 {
+  width: 400px;
+  height: 200px; }
+
+#main {
+  display: inline-block;
+  height: 600px; }
+  #main #dataArea0 {
+    background-color: #FE2E2E; }
+    #main #dataArea0 #dataArea00 {
+      background-color: #FE9A2E; }
+    #main #dataArea0 #dataArea01 {
+      background-color: #F7FE2E; }
+    #main #dataArea0 #dataArea02 {
+      background-color: #64FE2E; }
+  #main #dataArea1 {
+    background-color: green; }
+    #main #dataArea1 #dataArea10 {
+      background-color: #01DF01; }
+    #main #dataArea1 #dataArea11 {
+      background-color: #2EFEF7; }
+    #main #dataArea1 #dataArea12 {
+      background-color: #FF00FF; }
+  #main #dataArea2 {
+    background-color: blue; }
+    #main #dataArea2 #dataArea20 {
+      background-color: #819FF7; }
+    #main #dataArea2 #dataArea21 {
+      background-color: #DF013A; }
+    #main #dataArea2 #dataArea22 {
+      background-color: #58ACFA; }
+
+@media (min-width: 768px) {
+  div {
+    float: left; } }
+@media (min-width: 1023px) {
+  #main {
+    height: 600px;
+    float: left; } }
+
+/*# sourceMappingURL=api3day.css.map */

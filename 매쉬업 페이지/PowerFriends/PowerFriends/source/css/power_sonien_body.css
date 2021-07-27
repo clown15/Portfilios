@@ -1,0 +1,453 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto; }
+
+body {
+  background: #ffc55a; }
+
+.power_sonien {
+  position: relative;
+  width: 400px;
+  height: 380px;
+  z-index: 0;
+  transform: scale(0.7, 0.7); }
+  .power_sonien:hover .sweat .sweat1 {
+    width: 20px;
+    height: 40px;
+    border-color: #e4016b; }
+  .power_sonien:hover .sweat .sweat2 {
+    width: 25px;
+    height: 50px;
+    border-color: #e4016b; }
+  .power_sonien:hover .sonien_body .trunk .symbol_sonien .symbol1, .power_sonien:hover .sonien_body .trunk .symbol_sonien .symbol1:before, .power_sonien:hover .sonien_body .trunk .symbol_sonien .symbol2, .power_sonien:hover .sonien_body .trunk .symbol_sonien .symbol2:before {
+    background: #e4016b; }
+  .power_sonien:hover .sonien_body .trunk .symbol_sonien .symbol1:after {
+    border-right: 50px solid #e4016b;
+    border-bottom: 30px solid #e4016b; }
+  .power_sonien:hover .mouth_teeth {
+    top: 383px;
+    left: 170px;
+    width: 35px;
+    height: 40px;
+    border: 5px solid #e4016b;
+    z-index: 1;
+    transform: rotate(-10deg); }
+  .power_sonien:hover .mouth_teeth:after {
+    top: 15px; }
+  .power_sonien:hover .mouth {
+    left: 150px;
+    width: 80px;
+    height: 40px;
+    border: 6px solid #e4016b;
+    transform: rotate(-5deg); }
+  .power_sonien:hover .power_btn .btn_ring, .power_sonien:hover .power_btn .btn_center, .power_sonien:hover .power_btn .btn_ring_hide.left, .power_sonien:hover .power_btn .btn_ring_hide.right {
+    background: #e4016b;
+    transition: all 1s; }
+  .power_sonien:hover .power_btn .btn_ring {
+    left: 76px; }
+  .power_sonien:hover .power_btn .btn_inner_hide {
+    left: 100px; }
+  .power_sonien:hover .power_btn .btn_outer_hide {
+    left: 106px; }
+  .power_sonien:hover .power_btn .btn_center {
+    left: 163px; }
+  .power_sonien:hover .power_btn .btn_ring_hide.left {
+    left: 120px; }
+  .power_sonien:hover .power_btn .btn_ring_hide.right {
+    left: 209px; }
+  .power_sonien .face {
+    position: absolute;
+    top: 50px;
+    width: 400px;
+    height: 400px;
+    border-radius: 70% 5% 55% 50%/55% 5% 70% 50%;
+    background: #ffffff;
+    z-index: 1;
+    transform: rotate(-45deg); }
+  .power_sonien .sweat {
+    position: absolute;
+    z-index: 2;
+    transition: all 1s; }
+    .power_sonien .sweat .sweat1 {
+      position: absolute;
+      top: 140px;
+      left: 285px;
+      width: 0;
+      height: 0;
+      border: 3px solid #f25773;
+      border-radius: 100px;
+      transition: all 1s; }
+      .power_sonien .sweat .sweat1:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -5px;
+        width: 25px;
+        height: 30px;
+        background-color: #ffffff;
+        transition: all 1s; }
+    .power_sonien .sweat .sweat2 {
+      position: absolute;
+      top: 170px;
+      left: 310px;
+      width: 0;
+      height: 0;
+      border: 5px solid #f25773;
+      border-radius: 100px;
+      transition: all 1s; }
+      .power_sonien .sweat .sweat2:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -5px;
+        width: 30px;
+        height: 30px;
+        background-color: #ffffff;
+        transition: all 1s; }
+  .power_sonien .mouth_teeth {
+    position: absolute;
+    top: 395px;
+    left: 190px;
+    width: 10px;
+    height: 0;
+    border-radius: 100px;
+    z-index: 1;
+    transition: all 1s; }
+    .power_sonien .mouth_teeth:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -20px;
+      width: 50px;
+      height: 30px;
+      background-color: #ffffff;
+      z-index: 1;
+      transition: all 1s; }
+  .power_sonien .mouth {
+    position: absolute;
+    top: 365px;
+    left: 183px;
+    width: 34px;
+    height: 34px;
+    border: 7px solid #f25773;
+    border-radius: 100px;
+    z-index: 1;
+    transition: all 1s; }
+  .power_sonien .power_btn {
+    position: absolute;
+    margin: 0 auto;
+    top: 50px;
+    left: 0;
+    border-radius: 100%;
+    z-index: 1;
+    transition: all 1s; }
+    .power_sonien .power_btn .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background: #f25773;
+      z-index: 2;
+      transition: all 1s; }
+    .power_sonien .power_btn .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background: #ffffff;
+      z-index: 2;
+      transition: all 1s; }
+    .power_sonien .power_btn .btn_outer_hide {
+      position: absolute;
+      top: 10px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background: #ffffff;
+      z-index: 2;
+      transition: all 1s; }
+    .power_sonien .power_btn .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background: #f25773;
+      z-index: 3;
+      transition: all 1s; }
+    .power_sonien .power_btn .btn_ring_hide {
+      margin: 0;
+      position: absolute;
+      top: 112px;
+      left: 0;
+      width: 24px;
+      height: 26px;
+      border-radius: 100% 100% 50% 50%;
+      background: #f25773;
+      z-index: 3;
+      transition: all 1s; }
+      .power_sonien .power_btn .btn_ring_hide.left {
+        left: 140px;
+        transform: rotate(65deg);
+        transition: all 1s; }
+      .power_sonien .power_btn .btn_ring_hide.right {
+        left: 229px;
+        transform: rotate(-60deg);
+        transition: all 1s; }
+  .power_sonien .sonien_body {
+    position: absolute;
+    top: 380px;
+    width: 400px;
+    height: 370px;
+    z-index: 0; }
+    .power_sonien .sonien_body .trunk {
+      position: absolute;
+      top: 2px;
+      left: 112px;
+      width: 176px;
+      height: 180px;
+      border-radius: 0;
+      background-color: #ffffff;
+      z-index: 2; }
+      .power_sonien .sonien_body .trunk:before {
+        content: "";
+        position: absolute;
+        top: 130px;
+        width: 176px;
+        height: 100px;
+        border-radius: 100%;
+        background-color: #ffffff; }
+      .power_sonien .sonien_body .trunk .symbol_sonien {
+        position: absolute;
+        top: 90px;
+        left: -50px;
+        transform: rotate(-10deg) scale(0.25, 0.25);
+        transition: all 1s; }
+        .power_sonien .sonien_body .trunk .symbol_sonien .symbol1 {
+          position: absolute;
+          top: 30px;
+          left: 500px;
+          width: 80px;
+          height: 100px;
+          border-radius: 10%;
+          background-color: #f25773;
+          transform: rotate(20deg) skewX(-20deg);
+          transition: all 1s; }
+          .power_sonien .sonien_body .trunk .symbol_sonien .symbol1:before {
+            content: "";
+            position: absolute;
+            top: 60px;
+            left: 30px;
+            width: 50px;
+            height: 100px;
+            border-radius: 10%;
+            background-color: #f25773;
+            transition: all 1s; }
+          .power_sonien .sonien_body .trunk .symbol_sonien .symbol1:after {
+            content: "";
+            position: absolute;
+            top: 140px;
+            left: 25px;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-top: 30px solid transparent;
+            border-right: 50px solid #f25773;
+            border-bottom: 30px solid #f25773;
+            transform: rotate(-100deg) skewX(-10deg) skewY(10deg);
+            transition: all 1s; }
+        .power_sonien .sonien_body .trunk .symbol_sonien .symbol2 {
+          position: absolute;
+          top: 90px;
+          left: 510px;
+          width: 40px;
+          height: 100px;
+          border-radius: 10%;
+          background-color: #f25773;
+          transform: rotate(20deg) skewX(-30deg);
+          transition: all 1s; }
+          .power_sonien .sonien_body .trunk .symbol_sonien .symbol2:before {
+            content: "";
+            position: absolute;
+            top: 67px;
+            left: 61px;
+            width: 10px;
+            height: 86px;
+            border-radius: 100px;
+            background-color: #f25773;
+            transform: rotate(18deg) skewX(30deg);
+            transition: all 1s; }
+  .power_sonien .arm {
+    position: absolute;
+    top: 55px;
+    width: 33px;
+    height: 100px;
+    border-radius: 0 0 100px 100px;
+    background-color: #ffffff;
+    z-index: 1; }
+    .power_sonien .arm.left {
+      position: absolute;
+      top: 65px;
+      left: 7px;
+      width: 220px;
+      height: 92px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      transform: rotate(-60deg); }
+      .power_sonien .arm.left:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: #ffc55a;
+        z-index: 1;
+        transform: rotate(-10deg); }
+      .power_sonien .arm.left:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        left: -17px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: #ffc55a;
+        transform: rotate(-4deg); }
+    .power_sonien .arm.right {
+      position: absolute;
+      top: 65px;
+      right: 7px;
+      width: 220px;
+      height: 92px;
+      border-radius: 100%;
+      background-color: #ffffff;
+      transform: rotate(60deg); }
+      .power_sonien .arm.right:before {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -32px;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: #ffc55a;
+        z-index: 1;
+        transform: rotate(10deg); }
+      .power_sonien .arm.right:after {
+        content: "";
+        position: absolute;
+        top: 43px;
+        right: -17px;
+        width: 224px;
+        height: 80px;
+        border-radius: 100%;
+        background-color: #ffc55a;
+        transform: rotate(4deg); }
+  .power_sonien .hand {
+    position: absolute;
+    top: 156px;
+    width: 39px;
+    height: 57px;
+    border-radius: 30% 30% 100% 100%;
+    background-color: #ffffff;
+    z-index: 1; }
+    .power_sonien .hand.left {
+      left: 46px;
+      transform: rotate(8deg); }
+    .power_sonien .hand.right {
+      right: 46px;
+      transform: rotate(-8deg); }
+  .power_sonien .leg {
+    position: absolute;
+    top: 60px;
+    width: 50px;
+    height: 300px;
+    border-radius: 0 0 100px 100px;
+    background-color: #ffffff;
+    z-index: 1; }
+    .power_sonien .leg.left {
+      left: 117px; }
+      .power_sonien .leg.left:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        left: -15px;
+        width: 65px;
+        height: 55px;
+        border-radius: 60% 10% 50% 60%;
+        background-color: #ffffff; }
+    .power_sonien .leg.right {
+      right: 117px; }
+      .power_sonien .leg.right:before {
+        content: "";
+        position: absolute;
+        top: 250px;
+        right: 0;
+        width: 65px;
+        height: 55px;
+        border-radius: 60% 10% 50% 60%;
+        background-color: #ffffff; }
+  .power_sonien .tail {
+    position: absolute;
+    top: -80px;
+    left: 240px;
+    transform: rotate(30deg) scale(0.55, 0.55); }
+    .power_sonien .tail .tail1 {
+      position: absolute;
+      top: 30px;
+      left: 500px;
+      width: 80px;
+      height: 100px;
+      border-radius: 10%;
+      background-color: #e4016b;
+      transform: rotate(20deg) skewX(-20deg); }
+      .power_sonien .tail .tail1:before {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 30px;
+        width: 50px;
+        height: 100px;
+        border-radius: 10%;
+        background-color: #e4016b; }
+      .power_sonien .tail .tail1:after {
+        content: "";
+        position: absolute;
+        top: 140px;
+        left: 25px;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-top: 30px solid transparent;
+        border-right: 50px solid #e4016b;
+        border-bottom: 30px solid #e4016b;
+        transform: rotate(-100deg) skewX(-10deg) skewY(10deg); }
+    .power_sonien .tail .tail2 {
+      position: absolute;
+      top: 90px;
+      left: 510px;
+      width: 40px;
+      height: 100px;
+      border-radius: 10%;
+      background-color: #e4016b;
+      transform: rotate(20deg) skewX(-30deg); }
+      .power_sonien .tail .tail2:before {
+        content: "";
+        position: absolute;
+        top: 67px;
+        left: 61px;
+        width: 10px;
+        height: 86px;
+        border-radius: 100px;
+        background-color: #e4016b;
+        transform: rotate(18deg) skewX(30deg); }
+
+/*# sourceMappingURL=power_sonien_body.css.map */

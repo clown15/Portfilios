@@ -1,0 +1,110 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'info/Nwagon.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'info/total.css' %}" />
+<script src="{% static 'info/Nwagon.js' %}"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viewinfo</title>
+</head>
+<body>
+
+    ID:&nbsp{{ account.idname }}&nbsp이름:&nbsp{{ account.name }}<br>
+ <button type="button" onclick="location.href= 'http://14.63.166.83:80/info/information/detail/{{ account.id }}'">
+     상세 정보</button>&nbsp
+<button type="button" onclick="location.href= 'http://14.63.166.83:80/modify/{{ account.id }}'">
+     정보 수정</button><br>
+    <div class="info_section" id="cpu"><h3>cpu</h3></div>
+<script>
+	var options = {
+		'dataset':{
+			title: 'Web accessibility status',
+			values:[],
+			colorset: [],
+			fields: [],
+		},
+		'donut_width' : 100,
+		'core_circle_radius':0,
+		'chartDiv': 'cpu',
+		'chartType': 'pie',
+		'chartSize': {width:400, height:400}
+	};
+	var free = {{ res.cpu }};
+    {% for info in infolist %}
+        var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+	    options.dataset.values.push({{ info.cpu }})
+        options.dataset.fields.push('{{ info.pname }}')
+        options.dataset.colorset.push(colorcode)
+        free = free - {{ info.cpu }};
+    {% endfor %}
+    var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+    options.dataset.values.push(free)
+    options.dataset.fields.push('free')
+    options.dataset.colorset.push(colorcode)
+	Nwagon.chart(options);
+</script>
+
+    <div class="info_section" id="memory"><h3>memory</h3></div>
+<script>
+	var options = {
+		'dataset':{
+			title: 'Web accessibility status',
+			values:[],
+			colorset: [],
+			fields: [],
+		},
+		'donut_width' : 100,
+		'core_circle_radius':0,
+		'chartDiv': 'memory',
+		'chartType': 'pie',
+		'chartSize': {width:400, height:400}
+	};
+	var free = {{ res.memory }};
+	{% for info in infolist %}
+        var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+	    options.dataset.values.push({{ info.memory }})
+        options.dataset.fields.push('{{ info.pname }}')
+        options.dataset.colorset.push(colorcode)
+        free = free - {{ info.cpu }};
+    {% endfor %}
+    var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+    options.dataset.values.push(free)
+    options.dataset.fields.push('free')
+    options.dataset.colorset.push(colorcode)
+	Nwagon.chart(options);
+</script>
+
+    <div class="info_section" id="disk"><h3>disk</h3></div>
+<script>
+	var options = {
+		'dataset':{
+			title: 'Web accessibility status',
+			values:[],
+			colorset: [],
+			fields: [],
+		},
+		'donut_width' : 100,
+		'core_circle_radius':0,
+		'chartDiv': 'disk',
+		'chartType': 'pie',
+		'chartSize': {width:400, height:400}
+	};
+	var free = {{ res.disk }};
+	{% for info in infolist %}
+        var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+	    options.dataset.values.push({{ info.disk }})
+        options.dataset.fields.push('{{ info.pname }}')
+        options.dataset.colorset.push(colorcode)
+        free = free - {{ info.disk }}
+    {% endfor %}
+    var colorcode = "#" + Math.round(Math.random()*0xffffff).toString(16);
+    options.dataset.values.push(free)
+    options.dataset.fields.push('free')
+    options.dataset.colorset.push(colorcode)
+	Nwagon.chart(options);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+@import "power_color.scss";
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+body {
+  background: $miyeah_background;
+}
+.power_miyeah {
+  position: relative;
+  top: 0;
+  width: 400px;
+  height: 380px;
+  z-index: 0;
+  &:hover .neon_face {
+    box-shadow: 0 0 50px 5px $miyeah_neon;
+  }
+  &:hover .ear.left {
+    top: -30px;
+    left: -40px;
+    box-shadow: 0 0 50px 5px $miyeah_neon;
+    transform: rotate(-18deg);
+  }
+  &:hover .ear.right {
+    left: 265px;
+    top: 42px;
+    box-shadow: 0 0 50px 5px $miyeah_neon;
+    transform: rotate(50deg);
+  }
+  &:hover .ear.right:after,
+  &:hover .ear.left:after {
+    background-color: $miyeah_ear_hover;
+  }
+  &:hover .mouth .mouth_left {
+    left: 151px;
+    width: 55px;
+    border-color: $miyeah_keycolor_hover;
+  }
+  &:hover .mouth .mouth_right {
+    width: 55px;
+    border-color: $miyeah_keycolor_hover;
+  }
+  &:hover .mouth .mouth_right .mouth_right_circle.left {
+    left: -9px;
+    width: 10px;
+    background-color: $miyeah_keycolor_hover;
+  }
+  &:hover .mouth .mouth_right .mouth_right_circle.right {
+    left: 39px;
+    background-color: $miyeah_keycolor_hover;
+  }
+  &:hover .mouth .mouth_right .tooth {
+    left: 15px;
+    border-color: $miyeah_keycolor_hover;
+  }
+  &:hover .mouth .tongue {
+    top: 400px;
+    border-color: $miyeah_keycolor_hover;
+  }
+  &:hover .power_btn .btn_ring,
+  &:hover .power_btn .btn_center,
+  &:hover .power_btn .btn_ring_hide.left,
+  &:hover .power_btn .btn_ring_hide.right,
+  &:hover .mouth .tongue .line,
+  &:hover .mouth .mouth_left .mouth_left_circle.left {
+    background-color: $miyeah_keycolor_hover;
+  }
+  .neon_face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    transition: all 0.6s;
+  }
+  .ear {
+    position: absolute;
+    width: 240px;
+    height: 320px;
+    top: -10px;
+    border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+    background-color: $basics;
+    z-index: 1;
+    &.left {
+      left: -90px;
+      transform: rotate(-13deg) skewX(15deg);
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 70px;
+        left: 50px;
+        width: 120px;
+        height: 160px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        transition: all 1s;
+      }
+    }
+    &.right {
+      left: 250px;
+      transform: rotate(13deg) skewX(-15deg);
+      transition: all 0.5s;
+      &:after {
+        content: "";
+        position: absolute;
+        right: 50px;
+        width: 120px;
+        height: 160px;
+        top: 70px;
+        border-radius: 60% 60% 60% 60% / 90% 90% 30% 30%;
+        background-color: $miyeah_ear;
+        transition: all 1s;
+      }
+    }
+  }
+  .face {
+    position: absolute;
+    top: 100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+    background-color: $basics;
+    z-index: 1;
+  }
+  .mouth {
+    .mouth_left {
+      position: absolute;
+      top: 400px;
+      left: 161px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      transition: all 0.5s;
+      .mouth_left_hide {
+        position: absolute;
+        top: -15px;
+        left: -50px;
+        width: 150px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_left_circle {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        &.left {
+          left: -8px;
+          transform: rotate(-30deg);
+          transition: all 0.5s;
+        }
+      }
+    }
+    .mouth_right {
+      position: absolute;
+      top: 400px;
+      left: 198px;
+      width: 45px;
+      height: 45px;
+      border: 8px solid $miyeah_keycolor;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 2;
+      transition: all 0.5s;
+      .mouth_right_hide {
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        width: 68px;
+        height: 35px;
+        background-color: $basics;
+        z-index: 2;
+      }
+      .mouth_right_circle {
+        position: absolute;
+        top: 15px;
+        width: 8px;
+        height: 10px;
+        border-radius: 100% 100% 50% 50%;
+        background-color: $miyeah_keycolor;
+        z-index: 3;
+        transition: all 0.5s;
+        &.left {
+          left: -8px;
+          transform: rotate(0deg);
+          transition: all 0.5s;
+        }
+        &.right {
+          left: 29px;
+          transform: rotate(30deg);
+          transition: all 0.5s;
+        }
+      }
+      .tooth {
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        border-bottom: 5px solid $miyeah_keycolor;
+        border-right: 5px solid $miyeah_keycolor;
+        border-left: none;
+        border-top: none;
+        border-radius: 35%;
+        transform: rotate(55deg) skewX(25deg);
+        z-index: 2;
+        transition: all 0.5s;
+      }
+    }
+    .tongue {
+      position: absolute;
+      top: 340px;
+      left: 183px;
+      width: 40px;
+      height: 80px;
+      border: 5px solid $miyeah_keycolor;
+      border-radius: 100px;
+      z-index: 1;
+      transition: all 0.2s;
+      transition-delay: 0.3s;
+      .line {
+        position: absolute;
+        top: -8px;
+        left: 12px;
+        width: 4px;
+        height: 70px;
+        border-radius: 100px;
+        background-color: $miyeah_keycolor;
+        z-index: 1;
+        transition: all 0.3s;
+      }
+    }
+  }
+  .power_btn {
+    position: absolute;
+    top: 100px;
+    left: 4px;
+    z-index: 2;
+    transition: all 2s;
+    .btn_ring {
+      position: absolute;
+      top: 100px;
+      left: 96px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      transition: all 2s;
+    }
+    .btn_inner_hide {
+      position: absolute;
+      top: 125px;
+      left: 120px;
+      width: 152px;
+      height: 152px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_outer_hide {
+      position: absolute;
+      top: 5px;
+      left: 126px;
+      width: 140px;
+      height: 140px;
+      border-radius: 100%;
+      background-color: $basics;
+      z-index: 3;
+    }
+    .btn_center {
+      position: absolute;
+      top: 88px;
+      left: 183px;
+      width: 28px;
+      height: 73px;
+      border-radius: 55px;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      transition: all 2s;
+    }
+    .btn_ring_hide {
+      position: absolute;
+      top: 113px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100% 100% 50% 50%;
+      background-color: $miyeah_keycolor;
+      z-index: 3;
+      &.left {
+        left: 140px;
+        transform: rotate(65deg);
+        transition: all 2s;
+      }
+      &.right {
+        left: 228px;
+        transform: rotate(-65deg);
+        transition: all 2s;
+      }
+    }
+  }
+}

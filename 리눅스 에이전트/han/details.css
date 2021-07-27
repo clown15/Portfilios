@@ -1,0 +1,18 @@
+div {
+  display: inline-block; }
+
+#info {
+  background-color: yellow;
+  float: left;
+  width: 200px;
+  height: 200px; }
+
+#details {
+  clear: left;
+  background-color: green;
+  width: 200px;
+  height: 500px;
+  position: relative;
+  left: 10px; }
+
+/*# sourceMappingURL=details.css.map */

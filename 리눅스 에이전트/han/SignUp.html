@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./SignUp.css">
+	<script type="text/javascript" src="./SignUp.js"></script>
+</head>
+<body>
+	<form name="myform" method="post" onsubmit="chk();return false">
+		<div>
+			<label for="ID">ID:</label>
+			<input type="text" name="ID"><input type="button" name="idcheck" value="중복 검사"> <br>
+			<label for="pass1">PASS:</label>
+			<input type="password" name="pass1"><br>
+			<label for="pass2">PASS2:</label>
+			<input type="password" name="pass2"><br>
+			Rank:<select name="rank" size="1">
+			<option value="selected">사장</option>
+			<option>직원</option>
+		</select><br>
+		<input type="submit" id="signup" value="가입">
+		</div>
+	</form>
+</body>
+</html>

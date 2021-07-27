@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function bapapi() {
+			var key={"PFjg02izVgGD2nwaXzI07D9gYTcipIKgvAjOfhzQjPPESYsMOU"};
+			var url="https://bablabs.com/openapi/v1/campuses/JEnfpqCUuR/stores?date=2018-07-05";
+			document.write(getapi(url,key));
+			document.write("qwe");
+		}
+		function getapi(url,key) {
+			var req=new XMLHttpRequest();
+			req.open("GET",url,true);
+			req.setRequestHeader("accesstoken",key);
+			req.send();
+			for(var i=0;i<5;i++)
+				alert(req.readyState);
+			return req.responseText;
+		}
+	</script>
+</head>
+<body>
+<script type="text/javascript">bapapi();</script>
+</body>
+</html>

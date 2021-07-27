@@ -1,0 +1,36 @@
+ul li {
+  margin: 10px 0;
+  font-size: small;
+  padding: 3px 6px;
+  color: #fcfffa;
+  background: #bb00ff; }
+  ul li.sale {
+    content: "no sale";
+    margin: 0 10px;
+    border-radius: 0px;
+    background: #e8ee22; }
+  ul li.sale:before {
+    content: "SALE!";
+    margin: 0 15px;
+    border-radius: 4px;
+    color: #fff;
+    background: #f55; }
+  ul li.fire {
+    content: "no sale";
+    margin: 0 10px;
+    border-radius: 0px;
+    background: #ee0ecc; }
+  ul li.fire:after {
+    content: "FIRE SALE!";
+    margin: 100px 5px;
+    border-radius: 4px;
+    color: #3640ff;
+    background: #42ff42; }
+  ul li.fire:before {
+    content: "FIRE SALE!";
+    margin: 0 5px;
+    border-radius: 4px;
+    color: #3640ff;
+    background: #42ff42; }
+
+/*# sourceMappingURL=beforeafer.css.map */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="./jquery.js"></script>
+	<script type="text/javascript">
+		//query 안에서 함수사용 미숙
+		// function week(){
+		// 		var date=new Date();
+		// 		var y=date.getYear()+1900;
+		// 		var m=date.getMonth()+1;
+		// 		var d=date.getDate();
+		// 		var temp=y+'-'+m+'-'+d;
+		// 		return temp;
+		// }
+		function week() {
+			var date=new Array();
+			// var dayofMonth=date.getDate();
+			for(var i=0;i<7;i++) {
+				date[i]=new Date();
+				date[i].setDate(date[i].getDate()+i-4);
+			}
+			var temp_date=date;
+			return format_date(temp_date);
+		}
+		function format_date(curdate) {
+			var outdate=new Array();
+			for(var i=0;i<7;i++)
+				outdate[i]=(curdate[i].getFullYear()+'-'+(curdate[i].getMonth()+1)+'-'+curdate[i].getDate());
+			var json_date={
+				"date":[
+					{"day":outdate[0]},
+					{"day":outdate[1]},
+					{"day":outdate[2]},
+					{"day":outdate[3]},
+					{"day":outdate[4]},
+					{"day":outdate[5]},
+					{"day":outdate[6]},
+				]
+			};	//문자열 배열인 outdate의 값을 json_date에 json형식으로 저장
+			for(var j=0;j<7;j++)
+				alert(json_date.date[j].day);
+			return json_date;
+		}//배열에 일주일의 날짜 저장
+		$(document).ready(
+			function() {
+				var temp=week();
+				// alert(temp[0]);
+				// var json_date=JSON.stringify(temp);
+				// alert(json_date[5]);
+				$.each(temp.date,function(index,value) {
+					document.write(value.day+"<br>");
+				}
+				)//jquery의 반복문
+			$('#data').append(temp);	//data 에 temp값 삽입
+		});
+	</script>
+</head>
+<body>
+	<div id="data"></div>
+</body>
+</html>
