@@ -27,3 +27,4 @@ php
 - 사용 언어: php,html,js
 - 기간: 2019.09 - 2019.12
 - https://m.dotname.co.kr/
+- https://dotname.co/
