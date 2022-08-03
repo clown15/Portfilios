@@ -8,6 +8,14 @@ Ansible
 Docker   
 Kubernetes   
 
+### Cloud
+AWS   
+GCP   
+Azure   
+Alibaba   
+Openstack
+ESXi
+
 ### Backend
 python - djang   
 java - spring   
