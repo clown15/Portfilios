@@ -1,11 +1,21 @@
 # Portfilios
 
-## 사용기술
+## 사용 가능 기술
+
+### Infra
+Terraform
+Ansible
+Docker
+Kubernetes
 
 ### Backend
 python - djang
 java - spring
 php
+
+### 자격증
+#### AWS
+Certified Solutions Architect - Associate
 
 ## 완성된 프로젝트
 ### 리눅스 자원관리 에이전트
