@@ -3,15 +3,15 @@
 ## 사용 가능 기술
 
 ### Infra
-Terraform
-Ansible
-Docker
-Kubernetes
+Terraform   
+Ansible   
+Docker   
+Kubernetes   
 
 ### Backend
-python - djang
-java - spring
-php
+python - djang   
+java - spring   
+php   
 
 ### 자격증
 #### AWS
