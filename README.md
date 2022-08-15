@@ -7,13 +7,15 @@ Terraform
 Ansible   
 Docker   
 Kubernetes   
+Jenkins   
+GitLab
 
 ### Cloud
 AWS   
 GCP   
 Azure   
 Alibaba   
-Openstack
+Openstack   
 ESXi
 
 ### Backend
