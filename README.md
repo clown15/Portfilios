@@ -48,3 +48,8 @@ Certified Solutions Architect - Associate
 - 기간: 2019.09 - 2019.12
 - https://m.dotname.co.kr/
 - https://dotname.co/
+
+### 핀테크 아키텍처
+- 소개: 멀티클라우드를 활용한 핀테크 아키텍처 설계
+- 사용 기술: AWS, GCP, Rancher, Istio, Jenkins, ArgoCD, Kubernetes, Terraform, Harbor, Gitlab
+- 기간: 2022.10 - 2022.11
